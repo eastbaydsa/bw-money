@@ -1,0 +1,13 @@
+@import 'styles/colors.scss';
+
+.header {
+  background: $blue;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 60px;
+  }
+}

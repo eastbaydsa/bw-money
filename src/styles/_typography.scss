@@ -1,0 +1,32 @@
+@import './colors';
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@mixin lato {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+input,
+button {
+  @include lato;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  color: $blue;
+}
+
+p {
+  font-size: 16px;
+  color: $gray-dark;
+  line-height: 1.4em;
+}
