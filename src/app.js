@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './components/header/header.component'
 import H2 from './components/h2/h2.component'
+import ARROW from './components/arrow/arrow.component'
 import './app.css'
 
 class App extends Component {
@@ -13,6 +14,9 @@ class App extends Component {
           <div className="inner">
             <p>Illustration: donors give money (TK)</p>
           </div>
+        </div>
+        <div>
+        <ARROW />
         </div>
         <H2>FAQ</H2>
         <div className="content panel light">
@@ -38,7 +42,6 @@ class App extends Component {
             <p>
               Like it or not, we're all in a class struggle. Donors like these are setting the terms, but we have the strength, and it's not too late to fight back. 
             </p>
-            <br/>
             <button className="blue">DO SOMETHING</button>
           </div>
         </div>
