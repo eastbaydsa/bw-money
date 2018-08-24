@@ -3,5 +3,34 @@
 @import 'styles/_typography.scss';
 
 .content {
-  margin: 20px 40px;
+  margin: 26px 0px 42px;
 }
+
+.content {
+	.inner {
+		margin: 0 auto;
+		max-width: 660px;
+		padding: 0px 42px;
+	}	
+	&.dark {
+		background-color: $blue;
+		p { color: white; }
+		.inner {
+				padding: 22px 42px;
+			}
+	}
+}
+
+button {
+	display: block;
+	margin: 0 auto;
+	padding: 14px 42px;
+	border-radius: 5px;
+	border: none;
+	&.blue {
+		background-color: $blue-bright;
+		color: white;
+	}
+}
+
+
