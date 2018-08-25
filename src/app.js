@@ -15,9 +15,19 @@ class App extends Component {
             <p>Illustration: donors give money (TK)</p>
           </div>
         </div>
-        <div>
         <ARROW />
+        <div className="content panel dark" id="politics">
+          <div className="inner">
+            <p>Illustration: politicians work on behalf of donors (TK)</p>
+          </div>
         </div>
+        <ARROW />
+        <div className="content panel dark" id="workingclass">
+          <div className="inner">
+            <p>Illustration: working class gets the shaft (TK)</p>
+          </div>
+        </div>
+        <ARROW />                     
         <H2>FAQ</H2>
         <div className="content panel light">
           <div className="inner">
@@ -42,8 +52,11 @@ class App extends Component {
             <p>
               Like it or not, we're all in a class struggle. Donors like these are setting the terms, but we have the strength, and it's not too late to fight back. 
             </p>
-            <button className="blue">DO SOMETHING</button>
+            <button className="blue space">DO SOMETHING</button>
           </div>
+        </div>
+        <div className="content panel dark" id="footer">
+          <p>Created by East Bay DSA</p>
         </div>
     </div>      
     )
