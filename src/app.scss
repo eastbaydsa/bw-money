@@ -1,48 +1,55 @@
-@import 'styles/_breakpoints.scss';
-@import 'styles/_colors.scss';
-@import 'styles/_typography.scss';
+@import 'styles/breakpoints';
+@import 'styles/colors';
+@import 'styles/typography';
 
 .content {
   margin: 26px 0px 62px;
 }
 
 .content {
-	.inner {
-		margin: 0 auto;
-		max-width: 660px;
-		padding: 0px 42px;
-	}	
-	&.dark {
-		background-color: $blue;
-		min-height: 300px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		p { color: white; }
-		.inner {
-				padding: 22px 42px;
-			}
-	}
+  .inner {
+    margin: 0 auto;
+    max-width: 660px;
+    padding: 0px 42px;
+  }
+
+  &.dark {
+    background-color: $blue;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: white;
+    }
+
+    .inner {
+      padding: 22px 42px;
+    }
+  }
 }
 
 button {
-	display: block;
-	margin: 0 auto;
-	padding: 14px 42px;
-	border-radius: 5px;
-	border: none;
-	&.blue {
-		background-color: $blue-bright;
-		color: white;
-	}
-	&.space {
-		margin-top: 64px;
-		margin-bottom: 42px;
-	}
+  display: block;
+  margin: 0 auto;
+  padding: 14px 42px;
+  border-radius: 5px;
+  border: none;
+
+  &.blue {
+    background-color: $blue-bright;
+    color: white;
+  }
+
+  &.space {
+    margin-top: 64px;
+    margin-bottom: 42px;
+  }
 }
 
 #footer {
-	min-height: 0px;
-	margin-bottom: 0px;
-	padding: 8px;
+  min-height: 0px;
+  margin-bottom: 0px;
+  padding: 8px;
 }
