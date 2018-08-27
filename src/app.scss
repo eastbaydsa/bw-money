@@ -14,7 +14,7 @@
   }
 
   &.dark {
-    background-color: $blue;
+    background-color: $navy-100;
     min-height: 300px;
     display: flex;
     justify-content: center;
@@ -27,24 +27,6 @@
     .inner {
       padding: 22px 42px;
     }
-  }
-}
-
-button {
-  display: block;
-  margin: 0 auto;
-  padding: 14px 42px;
-  border-radius: 5px;
-  border: none;
-
-  &.blue {
-    background-color: $blue-bright;
-    color: white;
-  }
-
-  &.space {
-    margin-top: 64px;
-    margin-bottom: 42px;
   }
 }
 
