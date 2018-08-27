@@ -1,6 +1,25 @@
-$blue: #12092d;
-$blue-light: #dff5ff;
-$blue-bright-500: #228ae6;
-$blue-bright-400: darken(#228ae6, 10%);
-$gray-light: #cccccc;
-$gray-dark: #333333;
+// Color system
+// ------------
+//
+// Name color variables according to this scheme:
+//
+// $color-900 <- a very light color
+// $color-800
+// $color-700
+// $color-600
+// $color-500
+// $color-400
+// $color-300
+// $color-200
+// $color-100
+// $color-000 <- a very dark color
+
+$navy-100: #12092d;
+
+$blue-900: #dff5ff;
+$blue-700: lighten(#228ae6, 20%);
+$blue-500: #228ae6;
+$blue-400: darken(#228ae6, 10%);
+
+$gray-800: hsl(0, 0%, 80%);
+$gray-200: #333333;

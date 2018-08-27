@@ -5,19 +5,19 @@
   margin: 0 auto;
   padding: 14px 42px;
   border-radius: 5px;
-  border: 2px solid transparent;
+  border: none;
 
   &.blue {
-    background-color: $blue-bright-500;
+    background-color: $blue-500;
     color: white;
 
     &:hover {
-      background-color: $blue-bright-400;
+      background-color: $blue-400;
     }
 
     &:focus {
       outline: none;
-      border-color: $blue;
+      box-shadow: 0 0 0 4px $blue-700;
     }
   }
 
