@@ -1,13 +1,27 @@
 @import 'styles/colors.scss';
+@import 'styles/sizes.scss';
+@import 'styles/layers.scss';
 
 .header {
-  background: $navy-100;
-  height: 80px;
+  position: absolute;
+  width: 100%;
+  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: $layer-header;
+  background: $color-dark-background;
+
+  &.header--menu-open {
+    position: fixed;
+  }
 
   img {
     height: 60px;
   }
+}
+
+.header__wrapper {
+  height: $header-height;
+  display: flex;
 }

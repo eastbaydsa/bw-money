@@ -1,0 +1,54 @@
+@import 'styles/breakpoints';
+@import 'styles/colors';
+@import 'styles/layers';
+@import 'styles/sizes';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$header-height});
+  width: 100vw;
+  background-color: $color-dark-background;
+  position: fixed;
+  left: 0;
+  top: -100%;
+  z-index: $layer-menu;
+  transition: top 0.3s;
+
+  &.menu--open {
+    top: $header-height;
+  }
+}
+
+.menu__toggle-wrapper {
+  position: absolute;
+  left: 15px;
+  top: 28px;
+}
+
+.menu__toggle {
+  background-color: $color-light-background;
+  color: $color-text;
+  left: 15px;
+  top: 28px;
+}
+
+.menu__section-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.menu__section-link {
+  color: $color-text-reverse;
+  text-decoration: none;
+}
+
+.menu__social-links {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.menu__social-link {
+}
