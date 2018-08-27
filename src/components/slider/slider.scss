@@ -1,0 +1,73 @@
+@import '../../styles/colors';
+
+$slide-height: 380px;
+$image-height: $slide-height * 0.25;
+
+.slick-slider {
+  .slick-slide {
+    div {
+      outline: 0;
+    }
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+.bw-slide {
+  background: white;
+  box-shadow: 0 0 16px 4px rgba(black, 0.15);
+  border-radius: 10px;
+  margin: 16px 10px;
+  height: $slide-height;
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    height: $image-height;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content {
+    $margin: 20px;
+    margin: 20px;
+    height: $slide-height - $image-height - ($margin * 2);
+    overflow: hidden;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__donation {
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    text-align: right;
+  }
+
+  h3 {
+    font-size: 14px;
+    color: $gray-600;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 28px;
+    color: $navy-100;
+    line-height: 34px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 13px;
+    color: $gray-600;
+  }
+}

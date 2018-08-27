@@ -3,6 +3,7 @@ import Header from './components/header/header.component'
 import H2 from './components/h2/h2.component'
 import Arrow from './components/arrow/arrow.component'
 import Button from './components/button/button.component'
+import DonorSlider from './components/slider/slider.component'
 import './app.css'
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <DonorSlider />
         <H2>Their Money at Work</H2>
         <div className="content panel dark" id="money">
           <div className="inner">
