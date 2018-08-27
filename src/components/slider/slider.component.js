@@ -5,15 +5,6 @@ import './slider.css'
 
 import johnScullyImg from '../../images/donors/john-scully.jpg'
 
-const sliderSettings = {
-  className: 'center',
-  centerMode: true,
-  infinite: true,
-  centerPadding: '35px',
-  slidesToShow: 1,
-  speed: 500
-}
-
 const Slide = ({ imageSrc, name, donation, title, description, onClick }) => (
   <div className="bw-slide" onClick={onClick}>
     <div
@@ -35,6 +26,7 @@ const Slide = ({ imageSrc, name, donation, title, description, onClick }) => (
 
 class SlideModal extends Component {
   componentDidMount() {
+    window.scrollTo(0, 0)
     this.addClass(this.getBody(), 'modal-open')
   }
 
@@ -86,10 +78,27 @@ class SlideModal extends Component {
 
 class DonorSlider extends Component {
   state = {
-    modal: null
+    modal: null,
+    isDragging: false
+  }
+
+  sliderSettings = {
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    centerPadding: '35px',
+    slidesToShow: 1,
+    speed: 500,
+    beforeChange: () => {
+      this.setState({ isDragging: true })
+    }
   }
 
   openModal = () => {
+    if (this.state.isDragging) {
+      this.setState({ isDragging: false })
+      return
+    }
     this.setState({ modal: true })
   }
 
@@ -100,7 +109,7 @@ class DonorSlider extends Component {
   render() {
     return (
       <Fragment>
-        <Slider {...sliderSettings}>
+        <Slider {...this.sliderSettings}>
           <Slide
             imageSrc={johnScullyImg}
             name="Richard Smiggles"
