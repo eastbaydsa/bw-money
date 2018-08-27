@@ -1,19 +1,18 @@
 @import '../../styles/colors';
 
 .h2 {
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2em 0;
 
-  &:before {
+  &:before,
+  &:after {
     content: '';
     height: 1px;
     background: $gray-light;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 0;
+    flex: 0 1 100px;
+    margin: 0 15px;
   }
 
   h2 {
@@ -22,5 +21,6 @@
     position: relative;
     z-index: 1;
     padding: 0 15px;
+    margin: 0;
   }
 }
