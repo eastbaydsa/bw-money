@@ -1,0 +1,28 @@
+@import 'styles/colors';
+
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 42px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+
+  &.blue {
+    background-color: $blue-bright-500;
+    color: white;
+
+    &:hover {
+      background-color: $blue-bright-400;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $blue;
+    }
+  }
+
+  &.space {
+    margin-top: 64px;
+    margin-bottom: 42px;
+  }
+}

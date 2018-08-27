@@ -30,24 +30,6 @@
   }
 }
 
-button {
-  display: block;
-  margin: 0 auto;
-  padding: 14px 42px;
-  border-radius: 5px;
-  border: none;
-
-  &.blue {
-    background-color: $blue-bright;
-    color: white;
-  }
-
-  &.space {
-    margin-top: 64px;
-    margin-bottom: 42px;
-  }
-}
-
 #footer {
   min-height: 0px;
   margin-bottom: 0px;

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/header/header.component'
 import H2 from './components/h2/h2.component'
 import Arrow from './components/arrow/arrow.component'
+import Button from './components/button/button.component'
 import './app.css'
 
 class App extends Component {
@@ -54,7 +55,7 @@ class App extends Component {
               are setting the terms, but we have the strength, and it's not too
               late to fight back.
             </p>
-            <button className="blue space">DO SOMETHING</button>
+            <Button>DO SOMETHING</Button>
           </div>
         </div>
         <div className="content panel dark" id="footer">
