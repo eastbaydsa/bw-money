@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/layers';
 
 $slide-height: 380px;
 $image-height: $slide-height * 0.25;
@@ -34,13 +35,22 @@ $image-height: $slide-height * 0.25;
     $margin: 20px;
     margin: 20px;
     height: calc(100% - #{$image-height + ($margin * 2)});
-    overflow: hidden;
+  }
+
+  &__scrollable {
+    height: calc(100% - 30px);
+    overflow-y: auto;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__name {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    line-height: 1.4em;
   }
 
   &__donation {
@@ -71,47 +81,4 @@ $image-height: $slide-height * 0.25;
     line-height: 1.5em;
     color: $gray-600;
   }
-}
-
-.slide-modal {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: $layer-slider;
-
-  &__overlay {
-    position: absolute;
-    background: rgba(black, 0.8);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__close {
-    font-size: 40px;
-    color: white;
-    position: absolute;
-    top: 20px;
-    right: 33px;
-    cursor: pointer;
-  }
-
-  .bw-slide {
-    $margin: 25px;
-    height: calc(100% - #{$margin * 2});
-    width: calc(100% - #{$margin * 2});
-    margin: $margin;
-    position: relative;
-
-    &__content {
-      overflow: auto;
-    }
-  }
-}
-
-body.modal-open {
-  overflow: hidden;
 }
