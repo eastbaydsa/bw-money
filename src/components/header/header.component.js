@@ -7,24 +7,15 @@ import MenuToggle from '../menu/toggle.component.js'
 import Menu from '../menu/menu.component'
 
 class Header extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      menuOpen: false
-    }
-
-    this.handleClose = this.handleClose.bind(this)
-    this.handleOpen = this.handleOpen.bind(this)
+  state = {
+    menuOpen: false
   }
 
-  handleClose() {
-    console.log('handle close')
+  handleClose = () => {
     this.setState({ menuOpen: false })
   }
 
-  handleOpen() {
-    console.log('handle open')
+  handleOpen = () => {
     this.setState({ menuOpen: true })
   }
 
