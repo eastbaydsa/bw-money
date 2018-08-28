@@ -7,11 +7,14 @@ import FAQ from './content/faq'
 import FedUp from './content/fed-up'
 import './app.css'
 
+import sectionLinks from './data/sectionLinks'
+import socialLinks from './data/socialLinks'
+
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header sectionLinks={sectionLinks} socialLinks={socialLinks} />
         <DonorSlider />
         <TheirMoneyAtWork />
         <FAQ />
