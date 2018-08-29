@@ -3,7 +3,6 @@
 @import 'styles/layers.scss';
 
 .header {
-  position: absolute;
   width: 100%;
   height: $header-height;
   display: flex;
@@ -11,17 +10,20 @@
   justify-content: center;
   z-index: $layer-header;
   background: $color-dark-background;
-
-  &.header--menu-open {
-    position: fixed;
-  }
-
-  img {
-    height: 60px;
-  }
+  position: relative;
 }
 
-.header__wrapper {
+.header__logo {
+  height: 60px;
+}
+
+.header__social-links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   height: $header-height;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }

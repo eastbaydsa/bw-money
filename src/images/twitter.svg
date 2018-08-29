@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="33px" viewBox="0 0 40 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo / Twitter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-(1024px)-/-Menu-Clicked" transform="translate(-40.000000, -384.000000)" fill="#FFFFFF">
+            <g id="Logo-/-Twitter" transform="translate(40.000000, 380.000000)">
+                <g id="logo-twitter-white" transform="translate(0.000000, 4.000000)">
+                    <path d="M12.576,32.496 C27.664,32.496 35.92,19.984 35.92,9.152 C35.92,8.8 35.92,8.448 35.904,8.096 C37.504,6.928 38.896,5.488 40,3.856 C38.496,4.512 36.912,4.96 35.28,5.152 C36.992,4.128 38.272,2.512 38.88,0.608 C37.264,1.568 35.504,2.24 33.664,2.592 C30.56,-0.72 25.36,-0.88 22.048,2.24 C19.92,4.24 19.008,7.232 19.68,10.08 C13.104,9.744 6.944,6.624 2.784,1.504 C0.608,5.248 1.712,10.048 5.328,12.448 C4.016,12.416 2.752,12.064 1.6,11.424 C1.6,11.456 1.6,11.488 1.6,11.52 C1.6,15.424 4.352,18.784 8.192,19.568 C6.976,19.904 5.712,19.952 4.48,19.712 C5.552,23.056 8.64,25.344 12.144,25.408 C9.232,27.696 5.648,28.928 1.952,28.928 C1.296,28.928 0.64,28.88 0,28.816 C3.76,31.232 8.112,32.496 12.576,32.496" id="Shape" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
