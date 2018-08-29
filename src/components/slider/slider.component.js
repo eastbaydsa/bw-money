@@ -16,7 +16,7 @@ const getImage = donorName => {
   try {
     return require(`../../images/donors/${fileName}.jpg`)
   } catch (e) {
-    return null
+    return require(`../../images/donors/no-photo.jpg`)
   }
 }
 
