@@ -13,6 +13,9 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-measure": "^2.1.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-ga": "^1.0.0",
     "react-scripts": "1.1.4",
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
