@@ -116,7 +116,7 @@ class DonorSlider extends Component {
     const { selectedCategories } = this.state
     return (
       <Fragment>
-        <div class="donor-categories">
+        <div className="donor-categories">
           <Select
             options={this.categories}
             isMulti
