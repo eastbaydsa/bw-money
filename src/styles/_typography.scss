@@ -15,7 +15,8 @@ h6,
 p,
 li,
 input,
-button {
+button,
+.react-select-container {
   @include lato;
 }
 
@@ -29,4 +30,12 @@ p {
   font-size: 16px;
   color: $color-text;
   line-height: 1.4em;
+}
+
+a {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link-hover;
+  }
 }
