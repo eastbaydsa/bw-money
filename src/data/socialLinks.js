@@ -1,4 +1,7 @@
+import facebookIcon from '../images/facebook.svg'
+import twitterIcon from '../images/twitter.svg'
+
 export default [
-  { label: 'Facebook', url: 'https://facebook.com' },
-  { label: 'Twitter', url: 'https://twitter.com' }
+  { label: 'Twitter', url: 'https://twitter.com', icon: twitterIcon },
+  { label: 'Facebook', url: 'https://facebook.com', icon: facebookIcon }
 ]

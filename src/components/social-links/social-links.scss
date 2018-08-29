@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints.scss';
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  margin: 0 20px;
+  padding: 0;
+
+  @include bp(tablet) {
+    justify-content: flex-start;
+  }
+}
+
+.social-links__link {
+  flex: 0 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px $blue-700;
+    border-radius: 5px;
+  }
+
+  @include bp(tablet) {
+    justify-content: flex-start;
+    margin: 0 10px;
+  }
+}
