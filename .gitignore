@@ -9,6 +9,9 @@
 # production
 /build
 
+# generated files
+/src/data/donors.json
+
 # misc
 .DS_Store
 .env.local
