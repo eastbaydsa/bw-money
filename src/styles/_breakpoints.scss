@@ -1,6 +1,19 @@
+/*
+Breakpoints
+-----------
+
+Use it like this:
+
+.selector {
+  @include bp(tablet) {
+    color: $blue-light;
+  }
+}
+*/
+
 $breakpoints: (
-  tablet: 768,
-  desktop: 1000
+  tablet: 768px,
+  desktop: 1000px
 );
 
 @mixin bp($size) {

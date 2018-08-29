@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "classnames": "^2.2.6",
     "csv-parse": "^3.0.0",
     "gulp": "^4.0.0",
     "lodash": "^4.17.10",
