@@ -80,25 +80,53 @@ class Slide extends Component {
   }
 }
 
-const splitCatgories = category => category.split(', ')
+const splitCategories = category => category.split(', ')
 
 class DonorSlider extends Component {
   state = {
-    selectedCategories: []
+    selectedCategories: [],
+    sliderSettings: this.baseSliderSettings
   }
 
-  sliderSettings = {
+  baseSliderSettings = {
     className: 'center',
     centerMode: true,
     infinite: true,
     centerPadding: '35px',
     slidesToShow: 1,
-    speed: 500
+    speed: 500,
+    arrows: false
+  }
+
+  desktopSliderSettings = Object.assign({}, this.baseSliderSettings, {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    centerPadding: '100px',
+    arrows: true
+  })
+
+  componentDidMount() {
+    this.setSliderSettings()
+    window.addEventListener('resize', this.setSliderSettings)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setSliderSettings)
+  }
+
+  setSliderSettings = () => {
+    const sliderSettings =
+      window.innerWidth >= 768
+        ? this.desktopSliderSettings
+        : this.baseSliderSettings
+    if (this.state.sliderSettings !== sliderSettings) {
+      this.setState({ sliderSettings })
+    }
   }
 
   categories = donors
     .reduce((categories, donor) => {
-      const cats = splitCatgories(donor['Category'])
+      const cats = splitCategories(donor['Category'])
       cats.forEach(cat => {
         if (!categories.includes(cat)) categories.push(cat)
       })
@@ -113,7 +141,7 @@ class DonorSlider extends Component {
   }
 
   render() {
-    const { selectedCategories } = this.state
+    const { selectedCategories, sliderSettings } = this.state
     return (
       <Fragment>
         <div className="donor-categories">
@@ -125,11 +153,11 @@ class DonorSlider extends Component {
             className="react-select-container"
           />
         </div>
-        <Slider {...this.sliderSettings}>
+        <Slider {...sliderSettings}>
           {donors
             .filter(donor => {
               if (selectedCategories.length === 0) return true
-              const cats = splitCatgories(donor['Category'])
+              const cats = splitCategories(donor['Category'])
               return cats.reduce((inResultSet, cat) => {
                 return inResultSet || selectedCategories.includes(cat)
               }, false)
@@ -145,6 +173,7 @@ class DonorSlider extends Component {
               />
             ))}
         </Slider>
+        <div id="arrow-preloader" />
       </Fragment>
     )
   }

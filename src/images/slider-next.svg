@@ -1,0 +1,6 @@
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="#12092D" stroke-width="2" fill="none" transform="translate(1, 61) rotate(-90)">
+        <circle fill="#FFFFFF" cx="30" cy="30" r="30"></circle>
+        <polyline points="15 24 30 39 45 24"></polyline>
+    </g>
+</svg>

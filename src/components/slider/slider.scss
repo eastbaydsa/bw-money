@@ -1,19 +1,58 @@
-@import '../../styles/colors';
-@import '../../styles/layers';
+@import 'styles/colors';
+@import 'styles/layers';
+@import 'styles/breakpoints';
 
 $slide-height: 380px;
 $image-height: $slide-height * 0.25;
 
+$slide-height-tablet: 420px;
+$image-height-tablet: $slide-height-tablet * 0.35;
+
+$slide-height-desktop: 500px;
+$image-height-desktop: $slide-height-desktop * 0.35;
+
 .slick-slider {
   .slick-slide {
+    outline: 0;
+
     div {
       outline: 0;
     }
   }
 
   .slick-arrow {
-    display: none !important;
+    $size: 62px;
+    $padding: 12px;
+    position: absolute;
+    z-index: 100;
+    top: calc(50% - #{$size / 2});
+    right: $padding;
+    background-color: transparent;
+    background-image: url(../../images/slider-next.svg);
+    background-size: $size $size;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    width: $size;
+    height: $size;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-image: url(../../images/slider-next-hover.svg);
+    }
+
+    &.slick-prev {
+      transform: rotate(180deg);
+      right: auto;
+      left: $padding;
+    }
   }
+}
+
+#arrow-preloader {
+  background: url(../../images/slider-next-hover.svg) no-repeat -9999px -9999px;
 }
 
 .bw-slide {
@@ -24,11 +63,27 @@ $image-height: $slide-height * 0.25;
   height: $slide-height;
   overflow: hidden;
 
+  @include bp(tablet) {
+    height: $slide-height-tablet;
+  }
+
+  @include bp(desktop) {
+    height: $slide-height-desktop;
+  }
+
   &__image {
     width: 100%;
     height: $image-height;
     background-size: cover;
     background-position: center;
+
+    @include bp(tablet) {
+      height: $image-height-tablet;
+    }
+
+    @include bp(desktop) {
+      height: $image-height-desktop;
+    }
   }
 
   &__content {
@@ -39,12 +94,21 @@ $image-height: $slide-height * 0.25;
     &--no-image {
       height: calc(100% - #{$margin * 2});
     }
+
+    @include bp(tablet) {
+      height: calc(100% - #{$image-height-tablet + ($margin * 2)});
+    }
+
+    @include bp(desktop) {
+      height: calc(100% - #{$image-height-desktop + ($margin * 2)});
+    }
   }
 
   &__scrollable {
     height: calc(100% - 30px);
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 
     p:last-child {
       margin-bottom: 0;
@@ -82,12 +146,14 @@ $image-height: $slide-height * 0.25;
   }
 
   p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5em;
-    color: $gray-600;
+    color: $gray-400;
   }
 }
 
 .donor-categories {
   padding: 15px 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
