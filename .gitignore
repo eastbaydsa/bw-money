@@ -10,6 +10,7 @@
 /build
 
 # generated files
+/csv
 /src/data/donors.json
 
 # misc
