@@ -121,7 +121,11 @@ $image-height-desktop: $slide-height-desktop * 0.42;
     display: flex;
     justify-content: space-between;
     padding-bottom: 3px;
-    line-height: 28px;
+    line-height: 24px;
+
+    @include bp(tablet) {
+      line-height: 28px;
+    }
   }
 
   &__donation {
@@ -129,13 +133,18 @@ $image-height-desktop: $slide-height-desktop * 0.42;
     font-weight: bold;
     color: red;
     text-align: right;
+    padding-left: 15px;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 20px;
     color: $navy-100;
     font-weight: bold;
     margin: 0;
+
+    @include bp(tablet) {
+      font-size: 24px;
+    }
   }
 
   h4 {
