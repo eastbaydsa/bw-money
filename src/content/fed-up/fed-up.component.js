@@ -13,7 +13,7 @@ export default function(props) {
             setting the terms, but we have the strength, and it's not too late
             to fight back.
           </p>
-          <Button>DO SOMETHING</Button>
+          <Button href="http://www.eastbaydsa.org/events">DO SOMETHING</Button>
         </div>
       </div>
     </div>

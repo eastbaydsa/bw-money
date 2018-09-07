@@ -3,8 +3,15 @@ import './button.css'
 
 export default function Button({ children, ...otherProps }) {
   return (
-    <button className="button blue space" {...otherProps}>
-      {children}
-    </button>
+    <div class="button-wrapper">
+      <a
+        className="button blue space"
+        target="_blank"
+        rel="noopener noreferrer"
+        {...otherProps}
+      >
+        {children}
+      </a>
+    </div>
   )
 }
