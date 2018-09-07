@@ -112,6 +112,10 @@ $image-height-desktop: $slide-height-desktop * 0.42;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 
+    p:first-child {
+      margin-top: 0;
+    }
+
     p:last-child {
       margin-bottom: 0;
     }
@@ -120,7 +124,7 @@ $image-height-desktop: $slide-height-desktop * 0.42;
   &__name {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3px;
+    padding-bottom: 14px;
     line-height: 24px;
 
     @include bp(tablet) {
