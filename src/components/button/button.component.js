@@ -3,7 +3,7 @@ import './button.css'
 
 export default function Button({ children, ...otherProps }) {
   return (
-    <div class="button-wrapper">
+    <div className="button-wrapper">
       <a
         className="button blue space"
         target="_blank"
