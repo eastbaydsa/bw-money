@@ -35,7 +35,7 @@ class Slide extends Component {
   )
 
   render() {
-    const { imageSrc, name, donation, title, description, onClick } = this.props
+    const { imageSrc, name, donation, description, onClick } = this.props
     return (
       <div className="bw-slide" onClick={onClick}>
         {imageSrc && (
@@ -68,7 +68,7 @@ class Slide extends Component {
               height: `calc(100% - ${this.state.nameDimensions.height}px)`
             }}
           >
-            <h4>{title}</h4>
+            {/* <h4>{title}</h4> */}
             <ReactMarkdown
               renderers={{ link: this.linkRenderer }}
               source={description}
