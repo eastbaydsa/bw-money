@@ -12,6 +12,8 @@ $slide-height-desktop: 515px;
 $image-height-desktop: $slide-height-desktop * 0.42;
 
 .slick-slider {
+  margin-bottom: 80px;
+
   .slick-slide {
     outline: 0;
 
@@ -106,7 +108,7 @@ $image-height-desktop: $slide-height-desktop * 0.42;
 
   &__scrollable {
     height: calc(100% - 30px);
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 
@@ -155,5 +157,5 @@ $image-height-desktop: $slide-height-desktop * 0.42;
 .donor-categories {
   padding: 15px 20px;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10px auto 0;
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import Arrow from '../../components/arrow/arrow.component'
 import H2 from '../../components/h2/h2.component'
 
 export default function(props) {
@@ -23,7 +22,6 @@ export default function(props) {
           </p>
         </div>
       </div>
-      <Arrow />
     </div>
   )
 }
