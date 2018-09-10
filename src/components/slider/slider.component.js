@@ -82,28 +82,44 @@ class Slide extends Component {
 
 const splitCategories = category => category.split(', ')
 
+const baseSliderSettings = {
+  className: 'center',
+  centerMode: true,
+  infinite: true,
+  centerPadding: '35px',
+  slidesToShow: 1,
+  initialSlide: 0,
+  speed: 500,
+  arrows: false
+}
+
+const tabletSliderSettings = Object.assign({}, baseSliderSettings, {
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  centerPadding: '100px',
+  initialSlide: 1,
+  arrows: true
+})
+
+const desktopSliderSettings = Object.assign({}, tabletSliderSettings, {
+  slidesToShow: 3
+})
+
+const getSliderSettings = () => {
+  const windowWidth = window.innerWidth
+  if (windowWidth >= 1000) {
+    return desktopSliderSettings
+  } else if (windowWidth >= 768) {
+    return tabletSliderSettings
+  }
+  return baseSliderSettings
+}
+
 class DonorSlider extends Component {
   state = {
     selectedCategories: [],
-    sliderSettings: this.baseSliderSettings
+    sliderSettings: getSliderSettings()
   }
-
-  baseSliderSettings = {
-    className: 'center',
-    centerMode: true,
-    infinite: true,
-    centerPadding: '35px',
-    slidesToShow: 1,
-    speed: 500,
-    arrows: false
-  }
-
-  desktopSliderSettings = Object.assign({}, this.baseSliderSettings, {
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    centerPadding: '100px',
-    arrows: true
-  })
 
   componentDidMount() {
     this.setSliderSettings()
@@ -115,10 +131,7 @@ class DonorSlider extends Component {
   }
 
   setSliderSettings = () => {
-    const sliderSettings =
-      window.innerWidth >= 768
-        ? this.desktopSliderSettings
-        : this.baseSliderSettings
+    const sliderSettings = getSliderSettings()
     if (this.state.sliderSettings !== sliderSettings) {
       this.setState({ sliderSettings })
     }
