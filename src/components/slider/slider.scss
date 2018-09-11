@@ -12,7 +12,7 @@ $slide-height-desktop: 515px;
 $image-height-desktop: $slide-height-desktop * 0.42;
 
 .slick-slider {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 
   .slick-slide {
     outline: 0;
@@ -163,6 +163,24 @@ $image-height-desktop: $slide-height-desktop * 0.42;
     font-size: 14px;
     line-height: 1.5em;
     color: $gray-400;
+  }
+
+  &.buffy-wicks {
+    box-shadow: 0 0 16px 6px rgba(black, 0.35);
+
+    .bw-slide__name {
+      display: block;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 30px;
+      line-height: normal;
+
+      @include bp(tablet) {
+        font-size: 35px;
+      }
+    }
   }
 }
 

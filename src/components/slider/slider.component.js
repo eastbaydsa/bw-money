@@ -7,12 +7,15 @@ import classNames from 'classnames'
 import donors from '../../data/donors.json'
 import './slider.css'
 
-const getImage = donorName => {
-  const fileName = donorName
+const kebabCase = str =>
+  str
     .toLowerCase()
     .replace(/ /g, '-')
     .replace(/("|,)/g, '')
     .replace(/&/g, 'and')
+
+const getImage = donorName => {
+  const fileName = kebabCase(donorName)
   try {
     return require(`../../images/donors/${fileName}.jpg`)
   } catch (e) {
@@ -37,7 +40,10 @@ class Slide extends Component {
   render() {
     const { imageSrc, name, donation, description, onClick } = this.props
     return (
-      <div className="bw-slide" onClick={onClick}>
+      <div
+        className={classNames('bw-slide', kebabCase(name))}
+        onClick={onClick}
+      >
         {imageSrc && (
           <div
             className="bw-slide__image"
@@ -58,7 +64,9 @@ class Slide extends Component {
             {({ measureRef }) => (
               <div ref={measureRef} className="bw-slide__name">
                 <h3>{name}</h3>
-                <div className="bw-slide__donation">{donation}</div>
+                {donation && (
+                  <div className="bw-slide__donation">{donation}</div>
+                )}
               </div>
             )}
           </Measure>
@@ -97,7 +105,6 @@ const tabletSliderSettings = Object.assign({}, baseSliderSettings, {
   slidesToShow: 2,
   slidesToScroll: 1,
   centerPadding: '100px',
-  initialSlide: 1,
   arrows: true
 })
 
