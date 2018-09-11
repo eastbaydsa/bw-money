@@ -4,7 +4,16 @@ import './footer.css'
 export default function Footer() {
   return (
     <div className="footer content panel dark">
-      <p>Created by East Bay DSA</p>
+      <a
+        href="http://www.eastbaydsa.org/"
+        alt="East Bay DSA"
+        className="ebdsa-logo"
+      >
+        East Bay DSA
+      </a>
+      <a href="http://www.eastbaydsa.org/" alt="East Bay DSA">
+        Created by East Bay DSA
+      </a>
     </div>
   )
 }
