@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Intro from './components/intro/intro.component'
 import Header from './components/header/header.component'
 import DonorSlider from './components/slider/slider.component'
 import Footer from './components/footer/footer.component'
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div>
         <Header socialLinks={socialLinks} />
+        <Intro />
         <DonorSlider />
         <FAQ />
         <FedUp />

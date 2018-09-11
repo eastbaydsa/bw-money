@@ -1,0 +1,24 @@
+@import 'styles/colors';
+@import 'styles/breakpoints';
+
+.intro {
+  text-align: center;
+  margin: 25px 0 0;
+
+  .h2 {
+    margin-bottom: 1.2em;
+  }
+
+  .donation-value {
+    font-size: 18px;
+    margin: 0;
+    color: red;
+    font-weight: bold;
+  }
+
+  .introduction {
+    margin: 0 auto 25px;
+    padding: 30px 42px 0;
+    max-width: 660px;
+  }
+}
