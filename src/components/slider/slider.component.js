@@ -145,6 +145,7 @@ class DonorSlider extends Component {
       })
       return categories
     }, [])
+    .filter(Boolean)
     .map(cat => ({ value: cat, label: cat }))
 
   handleChange = options => {
