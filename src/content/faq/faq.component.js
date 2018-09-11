@@ -65,8 +65,14 @@ export default function(props) {
             instead?
           </h3>
           <p>
-            <a href="https://www.jovanka.org/">Jovanka Beckles</a> is a
-            corporate-free candidate and a democratic socialist with a long
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.jovanka.org/"
+            >
+              Jovanka Beckles
+            </a>{' '}
+            is a corporate-free candidate and a democratic socialist with a long
             history of fighting and winning for working people in the East Bay.
             She’s served on the Richmond City Council and is a leader in the
             Richmond Progressive Alliance (RPA). On the Richmond City Council,
@@ -75,11 +81,17 @@ export default function(props) {
             control, and banning the box.
           </p>
           <p>
-            <a href="https://www.jovanka.org/platform">Jovanka’s platform</a> is
-            a bold vision for a California that works for the many, not the few.
-            She knows that in a state with a $2.7 trillion GDP, we already have
-            already created more than enough wealth to provide everyone with a
-            stable, safe, and dignified life. Most importantly, Jovanka
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.jovanka.org/platform"
+            >
+              Jovanka’s platform
+            </a>{' '}
+            is a bold vision for a California that works for the many, not the
+            few. She knows that in a state with a $2.7 trillion GDP, we already
+            have already created more than enough wealth to provide everyone
+            with a stable, safe, and dignified life. Most importantly, Jovanka
             understands how power works, and that it
           </p>
           <p>
@@ -94,7 +106,11 @@ export default function(props) {
             Because Jovanka doesn’t have Buffy’s millions, she depends on
             ordinary people like you and me to talk to our neighbors and friends
             about sending her to Sacramento. Come to one of East Bay DSA’s{' '}
-            <a href="http://www.eastbaydsa.org/events">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.eastbaydsa.org/events"
+            >
               canvasses or phonebanks
             </a>{' '}
             between now and November! No experience necessary – we’ll train you
@@ -110,8 +126,19 @@ export default function(props) {
           </h3>
           <p>
             We are your friendly local{' '}
-            <a href="http://www.eastbaydsa.org">East Bay chapter</a> of the{' '}
-            <a href="http://www.dsausa.org/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.eastbaydsa.org"
+            >
+              East Bay chapter
+            </a>{' '}
+            of the{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.dsausa.org/"
+            >
               Democratic Socialists of America
             </a>
             ! We are solely responsible for this site. We want a world run for
@@ -119,39 +146,106 @@ export default function(props) {
             which means ordinary working people having democratic control over
             the things that matter. We pick big fights that will benefit working
             people, like{' '}
-            <a href="https://medicareforall.dsausa.org/">Medicare for All</a>{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://medicareforall.dsausa.org/"
+            >
+              Medicare for All
+            </a>{' '}
             and the{' '}
-            <a href="https://voteyesonprop10.org/">repeal of Costa-Hawkins</a>;
-            we support strong, democratic labor unions; and we back democratic
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://voteyesonprop10.org/"
+            >
+              repeal of Costa-Hawkins
+            </a>
+            ; we support strong, democratic labor unions; and we back democratic
             socialist political candidates like{' '}
-            <a href="https://www.jovanka.org/">Jovanka Beckles</a>, who is
-            running against Buffy. And we have fun doing it! Want to check us
-            out? Come out to one of our{' '}
-            <a href="http://www.eastbaydsa.org/resources/readings/socialist-school/2018/summer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.jovanka.org/"
+            >
+              Jovanka Beckles
+            </a>
+            , who is running against Buffy. And we have fun doing it! Want to
+            check us out? Come out to one of our{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.eastbaydsa.org/resources/readings/socialist-school/2018/summer"
+            >
               Socialist Night Schools
             </a>{' '}
             or an{' '}
-            <a href="http://www.eastbaydsa.org/events">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.eastbaydsa.org/events"
+            >
               Intro to Democratic Socialism event
             </a>
             ! Follow us on{' '}
-            <a href="https://www.facebook.com/eastbaydsa">Facebook</a> or{' '}
-            <a href="https://twitter.com/DSAEastBay">Twitter</a>! Sign up for
-            our <a href="http://www.eastbaydsa.org/join">newsletter</a> to learn
-            about events and actions! What Assembly District am I in?{' '}
-            <a href="http://findyourrep.legislature.ca.gov/">Click here</a> to
-            find out! Assembly District 15 covers parts Alameda (Albany,
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/eastbaydsa"
+            >
+              Facebook
+            </a>{' '}
+            or{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/DSAEastBay"
+            >
+              Twitter
+            </a>
+            ! Sign up for our{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.eastbaydsa.org/join"
+            >
+              newsletter
+            </a>{' '}
+            to learn about events and actions! What Assembly District am I in?{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://findyourrep.legislature.ca.gov/"
+            >
+              Click here
+            </a>{' '}
+            to find out! Assembly District 15 covers parts Alameda (Albany,
             Berkeley, Emeryville, Piedmont, parts of Oakland) and Contra Costa
             (El Cerrito, Hercules, Pinole, Richmond, San Pablo, El Sobrante, and
             Kensington) counties. When is the election, where is my polling
             place, and am I registered to vote? The general election is Nov. 6,
             2018.{' '}
-            <a href="http://www.sos.ca.gov/elections/polling-place/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.sos.ca.gov/elections/polling-place/"
+            >
               Find your polling place here
             </a>
-            . <a href="https://registertovote.ca.gov/">Register to vote here</a>{' '}
+            .{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://registertovote.ca.gov/"
+            >
+              Register to vote here
+            </a>{' '}
             before Oct. 15. After Oct. 15,{' '}
-            <a href="http://www.sos.ca.gov/elections/voter-registration/conditional-voter-reg/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://www.sos.ca.gov/elections/voter-registration/conditional-voter-reg/"
+            >
               here’s how you can vote conditionally
             </a>
             .
@@ -162,11 +256,23 @@ export default function(props) {
           </h3>
           <p>
             Hit us up at{' '}
-            <a href="mailto:info@eastbaydsa.org">info@eastbaydsa.org</a>! We can
-            share the code for this site and tell you how we did the research.
-            It’s fun! How can I get in touch with you? Find us at{' '}
-            <a href="mailto:info@eastbaydsa.org">info@eastbaydsa.org</a>. Say
-            hi!
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:info@eastbaydsa.org"
+            >
+              info@eastbaydsa.org
+            </a>
+            ! We can share the code for this site and tell you how we did the
+            research. It’s fun! How can I get in touch with you? Find us at{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:info@eastbaydsa.org"
+            >
+              info@eastbaydsa.org
+            </a>
+            . Say hi!
           </p>
         </div>
       </div>
