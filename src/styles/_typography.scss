@@ -27,7 +27,12 @@ h2 {
   color: $navy-100;
 }
 
-p {
+h3 {
+  line-height: 1.3em;
+}
+
+p,
+li {
   font-size: 16px;
   color: $color-text;
   line-height: 1.4em;
