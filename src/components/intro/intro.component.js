@@ -11,9 +11,9 @@ const Intro = () => (
     </H2>
     <p className="donation-value">$1,408,863.07</p>
     <p className="introduction">
-      Scroll to learn about wealthy donors and PACs who privatize schools,
-      repeal protections for working people, deregulate the finance industry,
-      and fund Buffy Wicks.
+      Learn about the wealthy donors and PACs who privatize schools, repeal
+      protections for working people, deregulate the finance industry, and fund
+      Buffy Wicks.
     </p>
   </div>
 )
