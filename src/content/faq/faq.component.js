@@ -255,18 +255,18 @@ export default function(props) {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="mailto:info@eastbaydsa.org"
+              href="mailto:elections@eastbaydsa.org"
             >
-              info@eastbaydsa.org
+              elections@eastbaydsa.org
             </a>
             ! We can share the code for this site and tell you how we did the
             research. It’s fun! How can I get in touch with you? Find us at{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="mailto:info@eastbaydsa.org"
+              href="mailto:elections@eastbaydsa.org"
             >
-              info@eastbaydsa.org
+              elections@eastbaydsa.org
             </a>
             . Say hi!
           </p>
