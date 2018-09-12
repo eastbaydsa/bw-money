@@ -10,9 +10,9 @@ export default function(props) {
           <h3>What do you have against Buffy and her donors?</h3>
           <p>
             Our politicians should work for us, represent us, and be accountable
-            to us – the ordinary working people of AD15. We don’t think someone
-            can take ten times the salary of a state representative from the one
-            percent and expect us to believe that she’s on our side.
+            to us &mdash; the ordinary working people of AD15. We don’t think
+            someone can take ten times the salary of a state representative from
+            the one percent and expect us to believe that she’s on our side.
           </p>
           <p>
             As socialists, we believe society should be run democratically and
@@ -26,7 +26,7 @@ export default function(props) {
             running, well funded, and ruthless campaign to take ever more for
             themselves and leave crumbs to the rest of us. They don’t want to
             pay taxes, pay the workers that made them rich, or pay for the
-            damageharms their profit-obsessed companies do to the world.
+            damage harms their profit-obsessed companies do to the world.
           </p>
           <p>To wage war on working people, the wealthy coordinate to:</p>
           <ul>
