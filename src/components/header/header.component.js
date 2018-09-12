@@ -12,7 +12,9 @@ class Header extends Component {
           {/* <div className="header__social-links">
             <SocialLinks links={this.props.socialLinks} />
           </div> */}
-          <img className="header__logo" src={logo} alt="Buffy Wicks Money" />
+          <a href="/">
+            <img className="header__logo" src={logo} alt="Buffy Wicks Money" />
+          </a>
         </div>
       </div>
     )
