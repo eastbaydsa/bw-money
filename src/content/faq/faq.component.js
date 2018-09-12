@@ -116,10 +116,6 @@ export default function(props) {
             between now and November! No experience necessary – we’ll train you
             and you’ll have a good time!
           </p>
-          <p>
-            (Jovanka and her campaign were not involved in the creation of this
-            website.)
-          </p>
           <h3>
             Who made this site? How can I learn more about DSA and get involved
             in the election?
