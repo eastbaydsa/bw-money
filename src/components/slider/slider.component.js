@@ -15,8 +15,8 @@ const kebabCase = str =>
     .replace(/&/g, 'and')
 
 const getImage = donorName => {
-  const fileName = kebabCase(donorName)
   try {
+    const fileName = kebabCase(donorName)
     return require(`../../images/donors/${fileName}.jpg`)
   } catch (e) {
     return require(`../../images/donors/no-photo.jpg`)
@@ -90,6 +90,43 @@ class Slide extends Component {
 
 const splitCategories = category => category.split(', ')
 
+const setHash = value => {
+  if (!value) {
+    return removeHash()
+  }
+  const hash = `#${value}`
+  if ('pushState' in window.history) {
+    window.history.pushState(null, null, hash)
+  } else {
+    window.location.hash = hash
+  }
+}
+
+// https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r/5298684#5298684
+const removeHash = () => {
+  let scrollV,
+    scrollH,
+    loc = window.location
+  if ('pushState' in window.history)
+    window.history.pushState('', document.title, loc.pathname + loc.search)
+  else {
+    // Prevent scrolling by storing the page's current scroll offset
+    scrollV = document.body.scrollTop
+    scrollH = document.body.scrollLeft
+
+    loc.hash = ''
+
+    // Restore the scroll offset, should be flicker free
+    document.body.scrollTop = scrollV
+    document.body.scrollLeft = scrollH
+  }
+}
+
+const getSlideIndexById = hash => {
+  const id = hash.replace('#', '')
+  return donors.findIndex(donor => id === kebabCase(donor['Name']))
+}
+
 const baseSliderSettings = {
   className: 'center',
   centerMode: true,
@@ -98,7 +135,11 @@ const baseSliderSettings = {
   slidesToShow: 1,
   initialSlide: 0,
   speed: 500,
-  arrows: false
+  arrows: false,
+  afterChange: index => {
+    const id = index < 1 ? null : kebabCase(donors[index]['Name'])
+    setHash(id)
+  }
 }
 
 const tabletSliderSettings = Object.assign({}, baseSliderSettings, {
@@ -122,25 +163,48 @@ const getSliderSettings = () => {
   return baseSliderSettings
 }
 
+const getInitialSlideIndex = () => {
+  const index = getSlideIndexById(window.location.hash)
+  return index < 0 ? 0 : getSlideIndexById(window.location.hash)
+}
+
 class DonorSlider extends Component {
   state = {
     selectedCategories: [],
-    sliderSettings: getSliderSettings()
+    sliderSettings: Object.assign({}, getSliderSettings(), {
+      initialSlide: getInitialSlideIndex()
+    })
   }
 
   componentDidMount() {
-    this.setSliderSettings()
     window.addEventListener('resize', this.setSliderSettings)
+    window.addEventListener('click', this.jumpToSlide, false)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.setSliderSettings)
+    window.removeEventListener('click', this.jumpToSlide, false)
+  }
+
+  bindRef = ref => {
+    this.slider = ref
   }
 
   setSliderSettings = () => {
     const sliderSettings = getSliderSettings()
     if (this.state.sliderSettings !== sliderSettings) {
       this.setState({ sliderSettings })
+    }
+  }
+
+  jumpToSlide = event => {
+    const { hash } = event.target
+    if (hash) {
+      const index = getSlideIndexById(hash)
+      if (index > -1) {
+        event.preventDefault()
+        this.slider.slickGoTo(index)
+      }
     }
   }
 
@@ -174,7 +238,7 @@ class DonorSlider extends Component {
             className="react-select-container"
           />
         </div>
-        <Slider {...sliderSettings}>
+        <Slider ref={this.bindRef} {...sliderSettings}>
           {donors
             .filter(donor => {
               if (selectedCategories.length === 0) return true
