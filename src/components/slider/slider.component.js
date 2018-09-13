@@ -10,6 +10,8 @@ import './slider.css'
 const kebabCase = str =>
   str
     .toLowerCase()
+    .replace(/\(.*\)/, '')
+    .trim()
     .replace(/ /g, '-')
     .replace(/("|,)/g, '')
     .replace(/&/g, 'and')
@@ -252,7 +254,7 @@ class DonorSlider extends Component {
                 key={donor['Name']}
                 imageSrc={getImage(donor['Name'])}
                 name={donor['Name']}
-                donation={donor['Amount Donated']}
+                donation={donor['Donations directly to Buffy']}
                 title={donor['Description hed']}
                 description={donor['Blurb']}
               />
