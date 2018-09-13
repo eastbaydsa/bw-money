@@ -42,7 +42,6 @@ class Slide extends Component {
 
   render() {
     const { imageSrc, name, donation, description } = this.props
-    console.log(name)
     return (
       <div className={classNames('bw-slide', kebabCase(name))}>
         {imageSrc && (
