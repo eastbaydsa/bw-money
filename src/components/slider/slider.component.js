@@ -10,8 +10,6 @@ import './slider.css'
 const kebabCase = str =>
   str
     .toLowerCase()
-    .replace(/\(.*\)/, '')
-    .trim()
     .replace(/ /g, '-')
     .replace(/("|,)/g, '')
     .replace(/&/g, 'and')
@@ -67,20 +65,7 @@ class Slide extends Component {
               <div ref={measureRef} className="bw-slide__name">
                 <h3>{name}</h3>
                 {donation && (
-                  <div className="bw-slide__donations">
-                    <div className="bw-slide__donation">
-                      Type:{' '}
-                      <span className="bw-slide__donation-value">
-                        {donation}
-                      </span>
-                    </div>
-                    <div className="bw-slide__donation">
-                      Type:{' '}
-                      <span className="bw-slide__donation-value">
-                        {donation}
-                      </span>
-                    </div>
-                  </div>
+                  <div className="bw-slide__donation">{donation}</div>
                 )}
               </div>
             )}
@@ -267,7 +252,7 @@ class DonorSlider extends Component {
                 key={donor['Name']}
                 imageSrc={getImage(donor['Name'])}
                 name={donor['Name']}
-                donation={donor['Donations directly to Buffy']}
+                donation={donor['Amount Donated']}
                 title={donor['Description hed']}
                 description={donor['Blurb']}
               />
