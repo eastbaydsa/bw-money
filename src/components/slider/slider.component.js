@@ -1,4 +1,5 @@
-import React, { Component, PureComponent, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
+import memoize from 'lodash/memoize'
 import Slider from 'react-slick'
 import Measure from 'react-measure'
 import ReactMarkdown from 'react-markdown'
@@ -25,7 +26,7 @@ const getImage = donorName => {
   }
 }
 
-class Slide extends PureComponent {
+class Slide extends Component {
   state = {
     nameDimensions: {
       width: 0,
@@ -169,6 +170,19 @@ const getInitialSlideIndex = () => {
   return index < 0 ? 0 : index
 }
 
+const _getDonorsInCategories = categories => {
+  return donors.filter(donor => {
+    if (!donor['Name']) return false
+    if (categories.length === 0) return true
+    const cats = splitCategories(donor['Category'])
+    return cats.reduce((inResultSet, cat) => {
+      return inResultSet || categories.includes(cat)
+    }, false)
+  })
+}
+
+const getDonorsInCategories = memoize(_getDonorsInCategories)
+
 class DonorSlider extends Component {
   state = {
     selectedCategories: [],
@@ -240,25 +254,16 @@ class DonorSlider extends Component {
           />
         </div>
         <Slider ref={this.bindRef} {...sliderSettings}>
-          {donors
-            .filter(donor => {
-              if (!donor['Name']) return false
-              if (selectedCategories.length === 0) return true
-              const cats = splitCategories(donor['Category'])
-              return cats.reduce((inResultSet, cat) => {
-                return inResultSet || selectedCategories.includes(cat)
-              }, false)
-            })
-            .map(donor => (
-              <Slide
-                key={donor['Name']}
-                imageSrc={getImage(donor['Name'])}
-                name={donor['Name']}
-                donation={donor['Donations directly to Buffy']}
-                title={donor['Description hed']}
-                description={donor['Blurb']}
-              />
-            ))}
+          {getDonorsInCategories(selectedCategories).map(donor => (
+            <Slide
+              key={donor['Name']}
+              imageSrc={getImage(donor['Name'])}
+              name={donor['Name']}
+              donation={donor['Donations directly to Buffy']}
+              title={donor['Description hed']}
+              description={donor['Blurb']}
+            />
+          ))}
         </Slider>
         <div id="arrow-preloader" />
       </Fragment>
