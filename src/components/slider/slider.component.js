@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, PureComponent, Fragment } from 'react'
 import Slider from 'react-slick'
 import Measure from 'react-measure'
 import ReactMarkdown from 'react-markdown'
@@ -25,7 +25,7 @@ const getImage = donorName => {
   }
 }
 
-class Slide extends Component {
+class Slide extends PureComponent {
   state = {
     nameDimensions: {
       width: 0,
@@ -40,12 +40,10 @@ class Slide extends Component {
   )
 
   render() {
-    const { imageSrc, name, donation, description, onClick } = this.props
+    const { imageSrc, name, donation, description } = this.props
+    console.log(name)
     return (
-      <div
-        className={classNames('bw-slide', kebabCase(name))}
-        onClick={onClick}
-      >
+      <div className={classNames('bw-slide', kebabCase(name))}>
         {imageSrc && (
           <div
             className="bw-slide__image"
@@ -125,6 +123,7 @@ const removeHash = () => {
 }
 
 const getSlideIndexById = hash => {
+  if (!hash) return -1
   const id = hash.replace('#', '')
   return donors.findIndex(donor => id === kebabCase(donor['Name']))
 }
@@ -167,7 +166,7 @@ const getSliderSettings = () => {
 
 const getInitialSlideIndex = () => {
   const index = getSlideIndexById(window.location.hash)
-  return index < 0 ? 0 : getSlideIndexById(window.location.hash)
+  return index < 0 ? 0 : index
 }
 
 class DonorSlider extends Component {
@@ -243,6 +242,7 @@ class DonorSlider extends Component {
         <Slider ref={this.bindRef} {...sliderSettings}>
           {donors
             .filter(donor => {
+              if (!donor['Name']) return false
               if (selectedCategories.length === 0) return true
               const cats = splitCategories(donor['Category'])
               return cats.reduce((inResultSet, cat) => {
