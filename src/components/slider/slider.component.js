@@ -41,7 +41,13 @@ class Slide extends Component {
   )
 
   render() {
-    const { imageSrc, name, donation, description } = this.props
+    const {
+      imageSrc,
+      name,
+      directDonation,
+      pacDonation,
+      description
+    } = this.props
     return (
       <div className={classNames('bw-slide', kebabCase(name))}>
         {imageSrc && (
@@ -64,9 +70,24 @@ class Slide extends Component {
             {({ measureRef }) => (
               <div ref={measureRef} className="bw-slide__name">
                 <h3>{name}</h3>
-                {donation && (
-                  <div className="bw-slide__donation">{donation}</div>
-                )}
+                <div className="bw-slide__donations">
+                  {directDonation && (
+                    <div className="bw-slide__donation">
+                      Direct:{' '}
+                      <span className="bw-slide__donation-value">
+                        {directDonation}
+                      </span>
+                    </div>
+                  )}
+                  {pacDonation && (
+                    <div className="bw-slide__donation">
+                      PAC:{' '}
+                      <span className="bw-slide__donation-value">
+                        {pacDonation}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </Measure>
@@ -258,7 +279,8 @@ class DonorSlider extends Component {
               key={donor['Name']}
               imageSrc={getImage(donor['Name'])}
               name={donor['Name']}
-              donation={donor['Donations directly to Buffy']}
+              directDonation={donor['Donations directly to Buffy']}
+              pacDonation={donor['Donations to Buffy-supporting PACs']}
               title={donor['Description hed']}
               description={donor['Blurb']}
             />
