@@ -9,9 +9,12 @@ export default function(props) {
       <div className="content panel light">
         <div className="inner">
           <p>
-            Like it or not, we're all in a class struggle. Donors like these are
-            setting the terms, but we have the strength, and it's not too late
-            to fight back.
+            Corporations and billionaires are very well organized and waging
+            class war on working people. Right now, wealthy donors like those
+            featured on this site are setting the terms for what our society can
+            look like. If ordinary working people come together to join in a
+            movement, we can fight back and win! Only together can we build a
+            society that works for the many, not the few. Join us.
           </p>
           <Button href="http://www.eastbaydsa.org/events">DO SOMETHING</Button>
         </div>
