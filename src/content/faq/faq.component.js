@@ -394,11 +394,7 @@ export default function(props) {
           </h3>
           <p>
             Hit us up at{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto:elections@eastbaydsa.org"
-            >
+            <a href="mailto:elections@eastbaydsa.org">
               elections@eastbaydsa.org
             </a>
             . We can share the code for this site and tell you how we did the
