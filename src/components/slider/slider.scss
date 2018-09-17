@@ -2,7 +2,7 @@
 @import 'styles/layers';
 @import 'styles/breakpoints';
 
-$slide-height: 380px;
+$slide-height: 400px;
 $image-height: $slide-height * 0.25;
 
 $slide-height-tablet: 426px;
@@ -122,8 +122,6 @@ $image-height-desktop: $slide-height-desktop * 0.42;
   }
 
   &__name {
-    display: flex;
-    justify-content: space-between;
     padding-bottom: 14px;
     line-height: 24px;
 
@@ -135,16 +133,16 @@ $image-height-desktop: $slide-height-desktop * 0.42;
   &__donations {
     white-space: nowrap;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 5px;
   }
 
   &__donation {
     font-size: 14px;
     font-weight: bold;
     text-align: right;
-    padding-left: 15px;
     line-height: 1.2em;
+    color: $navy-100;
   }
 
   &__donation-value {
