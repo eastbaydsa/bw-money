@@ -348,7 +348,7 @@ export default function(props) {
             >
               Click here
             </a>{' '}
-            to find out! Assembly District 15 covers parts Alameda (Albany,
+            to find out! Assembly District 15 covers parts of Alameda (Albany,
             Berkeley, Emeryville, Piedmont, parts of Oakland) and Contra Costa
             (El Cerrito, Hercules, Pinole, Richmond, San Pablo, El Sobrante, and
             Kensington) counties.
