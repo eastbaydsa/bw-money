@@ -10,15 +10,15 @@ export default function(props) {
           <h3>Why are you so mad about money in politics?</h3>
           <p>
             Our politicians should work for us, represent us, and be accountable
-            to us – the ordinary working people of AD15. Buffy benefits from
-            over a million dollars spent on AD15 by the wealthiest 0.1% of
-            Americans, including Trump cronies and Republicans, pitching in from
-            all across the country. Some of them contribute to PACs and
-            independent expenditure committees that boost her candidacy but
-            aren’t supposed to coordinate with her campaign; others give direct
-            donations (and plenty do both). She says she’s not accountable to
-            them, but rich people know that when money talks, politicians
-            listen.
+            to us – the ordinary working people of assembly district 15. Buffy
+            benefits from over a million dollars spent on AD15 by the wealthiest
+            0.1% of Americans, including Trump cronies and Republicans, pitching
+            in to influence this race from all across the country. Some of these
+            ultrawealthy donors contribute to PACs and independent expenditure
+            committees that boost Buffy’s candidacy but aren’t supposed to
+            coordinate with her campaign; others give direct donations to her
+            campaign (and plenty do both). She says she’s not accountable to
+            them, but rich people know that money talks, and politicians listen.
           </p>
           <p>
             As socialists, we believe society should be run democratically and
@@ -31,7 +31,7 @@ export default function(props) {
             well-funded, and ruthless campaign to take ever more for themselves
             and leave crumbs to the rest of us. They don’t want to pay taxes,
             pay the workers that made them rich, or pay for the damage their
-            profit-obsessed companies do to the world.{' '}
+            profit-obsessed companies do to the world.
           </p>
           <p>
             To increase their profits, corporations and the mega-rich must wage
@@ -40,7 +40,7 @@ export default function(props) {
           <ul>
             <li>
               Buy elections at every level of the government through unlimited
-              donations to PACs,{' '}
+              donations to PACs,
             </li>
             <li>
               Influence policy and media by funding think tanks and foundations
@@ -58,18 +58,17 @@ export default function(props) {
             This is not just about Buffy. Big donors pool their money and offer
             it to thousands of candidates like her across the country, at every
             level of government. This is how they block legislation that favors
-            working people, while passing policies that favor the rich, like tax
+            working people, while passing policies that help the rich, like tax
             cuts, corporate giveaways, anti-union legislation, and harmful
             deregulation. This is enabled by the <em>Citizens United</em>{' '}
-            decision that permits unlimited political spending under the guise
-            that money is “free speech.”
+            decision that permits unlimited political spending under the bizarre
+            logic that money is “free speech.”
           </p>
           <p>
             We have the resources to fix the many serious problems we face, but
             we won’t fix them by continuing to elect politicians who strike a
-            progressive pose while benefiting from massive spending by the
-            megarich and protecting the pro-big-business status quo at all
-            costs.
+            progressive pose while they benefitting from massive spending by the
+            megarich.
           </p>
           <h3>
             I definitely don’t want to vote for Buffy. Who should I vote for
@@ -102,7 +101,7 @@ export default function(props) {
             is a bold vision for a California that works for the many, not the
             few. She knows that in a state with a $2.7 trillion GDP, we have
             already created more than enough wealth and productive capacity to
-            provide everyone with a stable, safe, and dignified life.{' '}
+            provide everyone with a stable, safe, and dignified life.
           </p>
           <p>
             Jovanka will{' '}
@@ -128,7 +127,8 @@ export default function(props) {
               rel="noopener noreferrer"
               href="https://www.jovanka.org/education"
             >
-              plan for free universal pre-K
+              plan to provide high quality tuition free public education for all
+              Californians from preschool to college
             </a>{' '}
             and a moratorium on charter schools. She{' '}
             <a
@@ -156,6 +156,59 @@ export default function(props) {
             – we’ll train you and you’ll have a good time!
           </p>
           <h3>
+            Buffy says she doesn’t have any control over who spends money on her
+            behalf. Why does it matter who gives to these PACs?
+          </h3>
+          <p>
+            PACs are allowed to spend unlimited sums of money influencing
+            elections as long as they don’t coordinate too directly with
+            candidates’ campaigns. Buffy knows exactly how PACs work – she was
+            the executive director of Priorities USA, the largest Democratic
+            super PAC in history, which focused on{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.washingtonpost.com/news/post-politics/wp/2016/10/25/pro-clinton-super-pac-priorities-usa-action-breaks-fundraising-records/?utm_term=.4fc3fa87a2b6"
+            >
+              raking in donations from the mega-wealthy
+            </a>{' '}
+            and spent $133 million on the 2016 elections alone. Email leaks from
+            the 2016 Clinton campaign showed how{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://thehill.com/blogs/ballot-box/fundraising/300276-wikileaks-hack-reveals-cozy-relationship-between-clinton"
+            >
+              “cozy”
+            </a>{' '}
+            the relationship between the super PAC and Hillary’s campaign
+            actually was.
+          </p>
+          <p>
+            The big money in the AD15 race comes from capitalists who’ve made
+            their billions by choosing investments with profitable returns. Why
+            would they lavish huge sums on PACs like Govern for CA and EdVoice
+            (or Priorities USA) if they didn’t think it was going to be a
+            reliable and profitable investment for them?
+          </p>
+          <p>
+            They know Republicans can’t win in places like the East Bay, so the
+            next best thing is to support Buffy{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.counterpunch.org/2018/05/09/flush-with-cash-will-buffy-the-bernie-slayer-win-in-pro-sanders-district/"
+            >
+              “the Bernie Slayer”
+            </a>{' '}
+            Wicks and other corporate politicians like her who will pass
+            capitalist-friendly laws and give out tax breaks, while blocking
+            legislation that gives power and resources to working people. These
+            politicians can talk a good game during the campaign, telling voters
+            what they want to hear. But mega-rich PAC donors know what they’re
+            paying for.
+          </p>
+          <h3>
             Who made this site? How can I learn more about DSA and get involved
             in the election?
           </h3>
@@ -176,15 +229,16 @@ export default function(props) {
             >
               Democratic Socialists of America
             </a>
-            ! We are a member-run, all-volunteer organization. We created this
-            site to further the conversations in AD15 and beyond about the
-            influence of money in politics.
+            ! We are a member-run, all-volunteer organization. This website was
+            created solely by volunteers from East Bay DSA as a contribution to
+            the issues in this campaign, and to the national dialogue on the
+            questions of <em>Citizens United</em> and big money in politics.
           </p>
           <p>
             We want a world run for the benefit of people, not profit. We
             believe in real democracy, which means ordinary working people
             having democratic control over the economy and their own lives. We
-            pick big fights that will benefit working people, like{' '}
+            pick big fights that will benefit working people, like
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -209,7 +263,7 @@ export default function(props) {
             >
               Jovanka Beckles
             </a>
-            , who is running against Buffy. And we have fun doing it!{' '}
+            , who is running against Buffy. And we have fun doing it!
           </p>
           <p>
             In addition to Jovanka, we’re fighting for the{' '}
@@ -230,7 +284,7 @@ export default function(props) {
             </a>{' '}
             slate for Richmond City Council, the Community Power slate for
             Berkeley Rent Board, Measures O and P in Berkeley, and Measure Y in
-            Oakland -- all campaigns that benefit working people and take power
+            Oakland – all campaigns that benefit working people and take power
             from the capitalist class.
           </p>
           <p>
@@ -303,37 +357,43 @@ export default function(props) {
             When is the election, where is my polling place, and am I registered
             to vote?
           </h3>
+          <p>The general election is Nov. 6, 2018.</p>
           <p>
-            The general election is Nov. 6, 2018.{' '}
+            Find your polling place{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="http://www.sos.ca.gov/elections/polling-place"
+              href="http://www.sos.ca.gov/elections/polling-place/"
             >
-              Find your polling place here.
+              here
             </a>
+            .
           </p>
           <p>
+            Register to vote{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://registertovote.ca.gov/"
             >
-              Register to vote here
+              here
             </a>{' '}
-            before Oct. 15. After Oct. 15,{' '}
+            before Oct. 15. After Oct. 15, here’s how you can vote{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="http://www.sos.ca.gov/elections/voter-registration/conditional-voter-reg/"
             >
-              here’s how you can vote conditionally
+              conditionally
             </a>
             .
           </p>
-          <p>
+          <h3>
             I have a corporate candidate running in my local election. How can I
-            make a site like this? Hit us up at{' '}
+            make a site like this?
+          </h3>
+          <p>
+            Hit us up at{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -343,17 +403,6 @@ export default function(props) {
             </a>
             . We can share the code for this site and tell you how we did the
             research. It’s fun!
-          </p>
-          <p>
-            How can I get in touch with you? Find us at{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto:elections@eastbaydsa.org"
-            >
-              elections@eastbaydsa.org
-            </a>
-            . Say hi!
           </p>
         </div>
       </div>
