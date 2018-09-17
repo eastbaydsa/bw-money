@@ -9,7 +9,12 @@ const Intro = () => (
       <br />
       Total Donations
     </H2>
-    <p className="donation-value">$826,268.91</p>
+    <p className="donation-value">$1,450,783</p>
+    <p className="donation-subhead">
+      including direct donations
+      <br />
+      and independent expenditures
+    </p>
     <p className="introduction">
       Learn about the wealthy donors and PACs who privatize schools, repeal
       protections for working people, deregulate the finance industry, and fund
