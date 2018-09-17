@@ -1,6 +1,7 @@
 @import 'styles/colors';
 @import 'styles/layers';
 @import 'styles/breakpoints';
+@import 'styles/typography';
 
 $slide-height: 400px;
 $image-height: $slide-height * 0.25;
@@ -199,6 +200,7 @@ $image-height-desktop: $slide-height-desktop * 0.42;
   }
 
   &__category {
+    @include lato;
     background: $gray-600;
     border-radius: 4px;
     padding: 5px 8px;
