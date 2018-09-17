@@ -46,7 +46,8 @@ class Slide extends Component {
       name,
       directDonation,
       pacDonation,
-      description
+      description,
+      isVisible
     } = this.props
     return (
       <div className={classNames('bw-slide', kebabCase(name))}>
@@ -56,54 +57,56 @@ class Slide extends Component {
             style={{ backgroundImage: `url('${imageSrc}')` }}
           />
         )}
-        <div
-          className={classNames('bw-slide__content', {
-            'bw-slide__content--no-image': !imageSrc
-          })}
-        >
-          <Measure
-            bounds
-            onResize={contentRect => {
-              this.setState({ nameDimensions: contentRect.bounds })
-            }}
-          >
-            {({ measureRef }) => (
-              <div ref={measureRef} className="bw-slide__name">
-                <h3>{name}</h3>
-                <div className="bw-slide__donations">
-                  {directDonation && (
-                    <div className="bw-slide__donation">
-                      Direct:{' '}
-                      <span className="bw-slide__donation-value">
-                        {directDonation}
-                      </span>
-                    </div>
-                  )}
-                  {pacDonation && (
-                    <div className="bw-slide__donation">
-                      PAC:{' '}
-                      <span className="bw-slide__donation-value">
-                        {pacDonation}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-          </Measure>
+        {isVisible && (
           <div
-            className="bw-slide__scrollable"
-            style={{
-              height: `calc(100% - ${this.state.nameDimensions.height}px)`
-            }}
+            className={classNames('bw-slide__content', {
+              'bw-slide__content--no-image': !imageSrc
+            })}
           >
-            {/* <h4>{title}</h4> */}
-            <ReactMarkdown
-              renderers={{ link: this.linkRenderer }}
-              source={description}
-            />
+            <Measure
+              bounds
+              onResize={contentRect => {
+                this.setState({ nameDimensions: contentRect.bounds })
+              }}
+            >
+              {({ measureRef }) => (
+                <div ref={measureRef} className="bw-slide__name">
+                  <h3>{name}</h3>
+                  <div className="bw-slide__donations">
+                    {directDonation && (
+                      <div className="bw-slide__donation">
+                        Direct:{' '}
+                        <span className="bw-slide__donation-value">
+                          {directDonation}
+                        </span>
+                      </div>
+                    )}
+                    {pacDonation && (
+                      <div className="bw-slide__donation">
+                        PAC:{' '}
+                        <span className="bw-slide__donation-value">
+                          {pacDonation}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </Measure>
+            <div
+              className="bw-slide__scrollable"
+              style={{
+                height: `calc(100% - ${this.state.nameDimensions.height}px)`
+              }}
+            >
+              {/* <h4>{title}</h4> */}
+              <ReactMarkdown
+                renderers={{ link: this.linkRenderer }}
+                source={description}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }
@@ -149,42 +152,6 @@ const getSlideIndexById = hash => {
   return donors.findIndex(donor => id === kebabCase(donor['Name']))
 }
 
-const baseSliderSettings = {
-  className: 'center',
-  centerMode: true,
-  infinite: true,
-  centerPadding: '35px',
-  slidesToShow: 1,
-  initialSlide: 0,
-  speed: 500,
-  arrows: false,
-  afterChange: index => {
-    const id = index < 1 ? null : kebabCase(donors[index]['Name'])
-    setHash(id)
-  }
-}
-
-const tabletSliderSettings = Object.assign({}, baseSliderSettings, {
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  centerPadding: '100px',
-  arrows: true
-})
-
-const desktopSliderSettings = Object.assign({}, tabletSliderSettings, {
-  slidesToShow: 3
-})
-
-const getSliderSettings = () => {
-  const windowWidth = window.innerWidth
-  if (windowWidth >= 1000) {
-    return desktopSliderSettings
-  } else if (windowWidth >= 768) {
-    return tabletSliderSettings
-  }
-  return baseSliderSettings
-}
-
 const getInitialSlideIndex = () => {
   const index = getSlideIndexById(window.location.hash)
   return index < 0 ? 0 : index
@@ -204,11 +171,15 @@ const _getDonorsInCategories = categories => {
 const getDonorsInCategories = memoize(_getDonorsInCategories)
 
 class DonorSlider extends Component {
-  state = {
-    selectedCategories: [],
-    sliderSettings: Object.assign({}, getSliderSettings(), {
-      initialSlide: getInitialSlideIndex()
-    })
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedCategories: [],
+      currentSlide: getInitialSlideIndex(),
+      sliderSettings: Object.assign({}, this.getSliderSettings(), {
+        initialSlide: getInitialSlideIndex()
+      })
+    }
   }
 
   componentDidMount() {
@@ -225,8 +196,44 @@ class DonorSlider extends Component {
     this.slider = ref
   }
 
+  baseSliderSettings = {
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    centerPadding: '35px',
+    slidesToShow: 1,
+    initialSlide: 0,
+    speed: 500,
+    arrows: false,
+    afterChange: index => {
+      const id = index < 1 ? null : kebabCase(donors[index]['Name'])
+      setHash(id)
+      this.setState({ currentSlide: index })
+    }
+  }
+
+  tabletSliderSettings = Object.assign({}, this.baseSliderSettings, {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    centerPadding: '100px',
+    arrows: true
+  })
+
+  desktopSliderSettings = Object.assign({}, this.tabletSliderSettings, {
+    slidesToShow: 3
+  })
+
+  getSliderSettings = windowWidth => {
+    if (windowWidth >= 1000) {
+      return this.desktopSliderSettings
+    } else if (windowWidth >= 768) {
+      return this.tabletSliderSettings
+    }
+    return this.baseSliderSettings
+  }
+
   setSliderSettings = () => {
-    const sliderSettings = getSliderSettings()
+    const sliderSettings = this.getSliderSettings()
     if (this.state.sliderSettings !== sliderSettings) {
       this.setState({ sliderSettings })
     }
@@ -260,8 +267,23 @@ class DonorSlider extends Component {
     })
   }
 
+  // used for improved performance on mobile
+  isVisible = (cardIndex, currentIndex) => {
+    const padding = 3
+    const max = donors.length - 1
+    const minVisible = currentIndex - padding
+    const maxVisible = currentIndex + padding
+    if (minVisible < 0) {
+      return cardIndex > max + minVisible || cardIndex < maxVisible
+    } else if (maxVisible > max) {
+      return cardIndex > minVisible || cardIndex < maxVisible - max
+    }
+    return cardIndex > minVisible && cardIndex < maxVisible
+  }
+
   render() {
-    const { selectedCategories, sliderSettings } = this.state
+    const { selectedCategories, sliderSettings, currentSlide } = this.state
+    const isMobile = sliderSettings.slidesToShow === 1
     return (
       <Fragment>
         <div className="donor-categories">
@@ -274,7 +296,7 @@ class DonorSlider extends Component {
           />
         </div>
         <Slider ref={this.bindRef} {...sliderSettings}>
-          {getDonorsInCategories(selectedCategories).map(donor => (
+          {getDonorsInCategories(selectedCategories).map((donor, index) => (
             <Slide
               key={donor['Name']}
               imageSrc={getImage(donor['Name'])}
@@ -283,6 +305,9 @@ class DonorSlider extends Component {
               pacDonation={donor['Donations to Buffy-supporting PACs']}
               title={donor['Description hed']}
               description={donor['Blurb']}
+              index={index}
+              currentSlide={currentSlide}
+              isVisible={!isMobile || this.isVisible(index, currentSlide)}
             />
           ))}
         </Slider>
