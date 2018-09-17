@@ -223,7 +223,8 @@ class DonorSlider extends Component {
     slidesToShow: 3
   })
 
-  getSliderSettings = windowWidth => {
+  getSliderSettings = () => {
+    const windowWidth = window.innerWidth
     if (windowWidth >= 1000) {
       return this.desktopSliderSettings
     } else if (windowWidth >= 768) {
