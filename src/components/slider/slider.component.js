@@ -123,7 +123,7 @@ class Slide extends Component {
   }
 }
 
-const splitCategories = category => category.split(', ')
+const splitCategories = category => category.split(', ').filter(Boolean)
 
 const setHash = value => {
   if (!value) {
