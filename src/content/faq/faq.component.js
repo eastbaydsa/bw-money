@@ -238,7 +238,7 @@ export default function(props) {
             We want a world run for the benefit of people, not profit. We
             believe in real democracy, which means ordinary working people
             having democratic control over the economy and their own lives. We
-            pick big fights that will benefit working people, like
+            pick big fights that will benefit working people, like{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
