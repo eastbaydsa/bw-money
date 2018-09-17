@@ -217,8 +217,7 @@ class DonorSlider extends Component {
     speed: 500,
     arrows: false,
     afterChange: index => {
-      const id = index < 1 ? null : kebabCase(donors[index]['Name'])
-      setHash(id)
+      this.updateHash(index)
       this.setState({ currentSlide: index })
     }
   }
@@ -249,6 +248,12 @@ class DonorSlider extends Component {
     if (this.state.sliderSettings !== sliderSettings) {
       this.setState({ sliderSettings })
     }
+  }
+
+  updateHash = index => {
+    const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
+    const id = index < 1 ? null : kebabCase(visibleDonors[index]['Name'])
+    setHash(id)
   }
 
   jumpToSlide = event => {
@@ -309,6 +314,11 @@ class DonorSlider extends Component {
   render() {
     const { selectedCategories, sliderSettings, currentSlide } = this.state
     const isMobile = sliderSettings.slidesToShow === 1
+    const visibleDonors = getDonorsInCategories(selectedCategories)
+    const slidesToShow = Math.min(
+      visibleDonors.length,
+      sliderSettings.slidesToShow
+    )
     return (
       <Fragment>
         <div className="donor-categories">
@@ -320,8 +330,12 @@ class DonorSlider extends Component {
             className="react-select-container"
           />
         </div>
-        <Slider ref={this.bindRef} {...sliderSettings}>
-          {getDonorsInCategories(selectedCategories).map((donor, index) => (
+        <Slider
+          ref={this.bindRef}
+          {...sliderSettings}
+          slidesToShow={slidesToShow}
+        >
+          {visibleDonors.map((donor, index) => (
             <Slide
               key={donor['Name']}
               imageSrc={getImage(donor['Name'])}
