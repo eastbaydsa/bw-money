@@ -262,9 +262,21 @@ class DonorSlider extends Component {
     .map(cat => ({ value: cat, label: cat }))
 
   handleChange = options => {
-    this.setState({
-      selectedCategories: options.map(option => option.value)
-    })
+    this.setState(
+      {
+        selectedCategories: options.map(option => option.value)
+      },
+      () => {
+        // scroll to top of each scroll container
+        // after the card filters are updated
+        ;[].forEach.call(
+          document.querySelectorAll('.bw-slide__scrollable'),
+          elm => {
+            elm.scrollTo(0, 0)
+          }
+        )
+      }
+    )
   }
 
   // used for improved performance on mobile
