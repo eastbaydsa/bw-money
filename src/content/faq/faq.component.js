@@ -10,7 +10,7 @@ export default function(props) {
           <h3>Why are you so mad about money in politics?</h3>
           <p>
             Our politicians should work for us, represent us, and be accountable
-            to us – the ordinary working people of assembly district 15. Buffy
+            to us – the ordinary working people of Assembly District 15. Buffy
             benefits from over a million dollars spent on AD15 by the wealthiest
             0.1% of Americans, including Trump cronies and Republicans, pitching
             in to influence this race from all across the country. Some of these
