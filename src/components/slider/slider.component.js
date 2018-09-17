@@ -300,7 +300,8 @@ class DonorSlider extends Component {
   // used for improved performance on mobile
   isVisible = (cardIndex, currentIndex) => {
     const padding = 3
-    const max = donors.length - 1
+    const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
+    const max = visibleDonors.length - 1
     const minVisible = currentIndex - padding
     const maxVisible = currentIndex + padding
     if (minVisible < 0) {
