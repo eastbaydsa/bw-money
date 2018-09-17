@@ -47,8 +47,10 @@ class Slide extends Component {
       directDonation,
       pacDonation,
       description,
+      categories,
       isVisible
     } = this.props
+    const categoriesArr = splitCategories(categories).sort()
     return (
       <div className={classNames('bw-slide', kebabCase(name))}>
         {imageSrc && (
@@ -104,6 +106,15 @@ class Slide extends Component {
                 renderers={{ link: this.linkRenderer }}
                 source={description}
               />
+              {categoriesArr.length > 0 && (
+                <div className="bw-slide__categories">
+                  {categoriesArr.map(category => (
+                    <div className="bw-slide__category" key={category}>
+                      {category}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -260,6 +271,7 @@ class DonorSlider extends Component {
       return categories
     }, [])
     .filter(Boolean)
+    .sort()
     .map(cat => ({ value: cat, label: cat }))
 
   handleChange = options => {
@@ -318,6 +330,7 @@ class DonorSlider extends Component {
               pacDonation={donor['Donations to Buffy-supporting PACs']}
               title={donor['Description hed']}
               description={donor['Blurb']}
+              categories={donor['Category']}
               index={index}
               currentSlide={currentSlide}
               isVisible={!isMobile || this.isVisible(index, currentSlide)}

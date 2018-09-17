@@ -191,6 +191,21 @@ $image-height-desktop: $slide-height-desktop * 0.42;
       }
     }
   }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  &__category {
+    background: $gray-600;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 13px;
+    color: white;
+    margin: 5px 5px 0 0;
+  }
 }
 
 .donor-categories {
