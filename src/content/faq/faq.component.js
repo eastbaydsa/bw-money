@@ -339,6 +339,37 @@ export default function(props) {
             </a>{' '}
             to learn about events and actions!
           </p>
+          <h3>Where’d you get all this information from?</h3>
+          <p>
+            It’s all public record. For individual contributions, we went to the
+            California Secretary of State’s{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://powersearch.sos.ca.gov/"
+            >
+              Power Search
+            </a>{' '}
+            site. Then we clicked on “Campaign Finance” and typed “Buffy Wicks”
+            into the search box. That pulled up a list of all of the donors from
+            this election, which we then downloaded as a spreadsheet.
+          </p>
+          <p>
+            For independent expenditures, we again went to Power Search, and
+            clicked on (you guessed it) “Independent Expenditures.” That let us
+            search for every PAC that’s spent to support the campaign and how
+            much they’ve spent so far.
+          </p>
+          <p>
+            To see who’s donated to Govern for California and other PACs in the
+            race, we headed over to Cal-Access and looked for the PAC names
+            under “Committees, Parties, Major Donors &amp; Slate Mailers.” That
+            generated a big list of donors and dollar amounts.
+          </p>
+          <p>
+            Finally, all the news stories and delicious details were revealed
+            through humble Google searches. That’s it!
+          </p>
           <h3>What Assembly District am I in?</h3>
           <p>
             <a
@@ -378,7 +409,7 @@ export default function(props) {
             >
               here
             </a>{' '}
-            before Oct. 15. After Oct. 15, here’s how you can vote{' '}
+            before Oct. 22. After Oct. 22, here’s how you can vote{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
