@@ -3,14 +3,14 @@
 @import 'styles/breakpoints';
 @import 'styles/typography';
 
-$slide-height: 400px;
+$slide-height: 450px;
 $image-height: $slide-height * 0.25;
 
-$slide-height-tablet: 426px;
+$slide-height-tablet: 480px;
 $image-height-tablet: $slide-height-tablet * 0.35;
 
-$slide-height-desktop: 515px;
-$image-height-desktop: $slide-height-desktop * 0.42;
+$slide-height-desktop: 560px;
+$image-height-desktop: $slide-height-desktop * 0.4;
 
 .slick-slider {
   margin-bottom: 40px;
