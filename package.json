@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "csv-parse": "^3.0.0",
     "gulp": "^4.0.0",
     "lodash": "^4.17.11",
