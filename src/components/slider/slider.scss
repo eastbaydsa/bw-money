@@ -91,21 +91,27 @@ $image-height-desktop: $slide-height-desktop * 0.35;
 
   &__content {
     $margin-mobile: 15px;
-    $margin: 20px;
     margin: $margin-mobile;
-    height: calc(100% - #{$image-height + ($margin * 2)});
+    height: calc(100% - #{$image-height + ($margin-mobile * 2)});
 
     &--no-image {
-      margin: $margin;
-      height: calc(100% - #{$margin * 2});
+      margin: $margin-mobile;
+      height: calc(100% - #{$margin-mobile * 2});
     }
 
     @include bp(tablet) {
-      height: calc(100% - #{$image-height-tablet + ($margin * 2)});
+      height: calc(100% - #{$image-height-tablet + ($margin-mobile * 2)});
     }
 
     @include bp(desktop) {
+      $margin: 20px;
+      margin: $margin;
       height: calc(100% - #{$image-height-desktop + ($margin * 2)});
+
+      &--no-image {
+        margin: $margin;
+        height: calc(100% - #{$margin * 2});
+      }
     }
   }
 
