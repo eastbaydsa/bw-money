@@ -1,4 +1,5 @@
 import React from 'react'
+import CountUp from 'react-countup'
 import H2 from '../h2/h2.component'
 import './intro.css'
 
@@ -9,7 +10,17 @@ const Intro = () => (
       <br />
       Total Donations
     </H2>
-    <p className="donation-value">$1,450,783</p>
+    <p className="donation-value">
+      <CountUp
+        prefix="$"
+        delay={0.5}
+        start={0}
+        end={1483283}
+        separator=","
+        duration={2.5}
+        useEasing
+      />
+    </p>
     <p className="donation-subhead">
       including direct donations
       <br />
