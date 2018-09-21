@@ -67,7 +67,7 @@ export default function(props) {
           <p>
             We have the resources to fix the many serious problems we face, but
             we won’t fix them by continuing to elect politicians who strike a
-            progressive pose while they benefitting from massive spending by the
+            progressive pose while benefitting from massive spending by the
             megarich.
           </p>
           <h3>
