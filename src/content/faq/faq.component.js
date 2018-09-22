@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Collapse } from 'react-collapse'
 import H2 from '../../components/h2/h2.component'
+import './faq.css'
 
-export default function(props) {
-  return (
-    <div>
-      <H2>FAQ</H2>
-      <div className="content panel light">
-        <div className="inner">
-          <h3>Why are you so mad about money in politics?</h3>
+class Section extends Component {
+  state = {
+    isOpened: false
+  }
+
+  toggleCollapse = () => {
+    this.setState(({ isOpened }) => ({ isOpened: !isOpened }))
+  }
+
+  render() {
+    const { title, children } = this.props
+    const { isOpened } = this.state
+    return (
+      <div className="collapse-container">
+        <h3
+          className={isOpened ? 'opened' : 'closed'}
+          onClick={this.toggleCollapse}
+        >
+          {title}
+        </h3>
+        <Collapse isOpened={isOpened}>{children}</Collapse>
+      </div>
+    )
+  }
+}
+
+const FAQ = () => (
+  <div className="faq-wrapper">
+    <H2>FAQ</H2>
+    <div className="content panel light faq">
+      <div className="inner">
+        <Section title="Why are you so mad about money in politics?">
           <p>
             Our politicians should work for us, represent us, and be accountable
             to us – the ordinary working people of Assembly District 15. Buffy
@@ -70,10 +97,8 @@ export default function(props) {
             progressive pose while benefitting from massive spending by the
             megarich.
           </p>
-          <h3>
-            I definitely don’t want to vote for Buffy. Who should I vote for
-            instead?
-          </h3>
+        </Section>
+        <Section title="I definitely don’t want to vote for Buffy. Who should I vote for instead?">
           <p>
             <a
               target="_blank"
@@ -155,10 +180,8 @@ export default function(props) {
             between now and November! No experience necessary to join a canvass
             – we’ll train you and you’ll have a good time!
           </p>
-          <h3>
-            Buffy says she doesn’t have any control over who spends money on her
-            behalf. Why does it matter who gives to these PACs?
-          </h3>
+        </Section>
+        <Section title="Buffy says she doesn’t have any control over who spends money on her behalf. Why does it matter who gives to these PACs?">
           <p>
             PACs are allowed to spend unlimited sums of money influencing
             elections as long as they don’t coordinate too directly with
@@ -208,10 +231,8 @@ export default function(props) {
             what they want to hear. But mega-rich PAC donors know what they’re
             paying for.
           </p>
-          <h3>
-            Who made this site? How can I learn more about DSA and get involved
-            in the election?
-          </h3>
+        </Section>
+        <Section title="Who made this site? How can I learn more about DSA and get involved in the election?">
           <p>
             We are your friendly local{' '}
             <a
@@ -339,7 +360,8 @@ export default function(props) {
             </a>{' '}
             to learn about events and actions!
           </p>
-          <h3>Where’d you get all this information from?</h3>
+        </Section>
+        <Section title="Where’d you get all this information from?">
           <p>
             It’s all public record. For individual contributions, we went to the
             California Secretary of State’s{' '}
@@ -370,7 +392,8 @@ export default function(props) {
             Finally, all the news stories and delicious details were revealed
             through humble Google searches. That’s it!
           </p>
-          <h3>What Assembly District am I in?</h3>
+        </Section>
+        <Section title="What Assembly District am I in?">
           <p>
             <a
               target="_blank"
@@ -384,10 +407,8 @@ export default function(props) {
             (El Cerrito, Hercules, Pinole, Richmond, San Pablo, El Sobrante, and
             Kensington) counties.
           </p>
-          <h3>
-            When is the election, where is my polling place, and am I registered
-            to vote?
-          </h3>
+        </Section>
+        <Section title="When is the election, where is my polling place, and am I registered to vote?">
           <p>The general election is Nov. 6, 2018.</p>
           <p>
             Find your polling place{' '}
@@ -419,10 +440,8 @@ export default function(props) {
             </a>
             .
           </p>
-          <h3>
-            I have a corporate candidate running in my local election. How can I
-            make a site like this?
-          </h3>
+        </Section>
+        <Section title="I have a corporate candidate running in my local election. How can I make a site like this?">
           <p>
             Hit us up at{' '}
             <a href="mailto:elections@eastbaydsa.org">
@@ -431,8 +450,10 @@ export default function(props) {
             . We can share the code for this site and tell you how we did the
             research. It’s fun!
           </p>
-        </div>
+        </Section>
       </div>
     </div>
-  )
-}
+  </div>
+)
+
+export default FAQ
