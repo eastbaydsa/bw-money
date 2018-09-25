@@ -187,13 +187,15 @@ const getDonorsInCategories = memoize(_getDonorsInCategories)
 class DonorSlider extends Component {
   constructor(props) {
     super(props)
+    const initialSlideIndex = getInitialSlideIndex()
     this.state = {
       selectedCategories: [],
-      currentSlide: getInitialSlideIndex(),
+      currentSlide: initialSlideIndex,
       sliderSettings: Object.assign({}, this.getSliderSettings(), {
-        initialSlide: getInitialSlideIndex()
+        initialSlide: initialSlideIndex
       })
     }
+    this.setMeta(this.getDonorByIndex(initialSlideIndex))
   }
 
   componentDidMount() {
@@ -253,16 +255,24 @@ class DonorSlider extends Component {
     }
   }
 
-  updateHash = index => {
-    const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
-    const donor = visibleDonors[index]
-    const id = index < 1 ? null : kebabCase(donor['Name'])
+  setMeta = donor => {
     this.props.setMeta({
-      title: `Buffy Wicks donor: ${donor['Name']}`,
-      description: donor['Description hed'],
+      title: `Buffy Wicks donor: ${donor['Name'].trim()}`,
+      description: donor['Description hed'].trim(),
       image: fetchImage(donor['Name']),
-      alt: donor['Name']
+      alt: donor['Name'].trim()
     })
+  }
+
+  getDonorByIndex = index => {
+    const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
+    return visibleDonors[index]
+  }
+
+  updateHash = index => {
+    const donor = this.getDonorByIndex(index)
+    const id = index < 1 ? null : kebabCase(donor['Name'])
+    this.setMeta(donor)
     setHash(id)
   }
 
