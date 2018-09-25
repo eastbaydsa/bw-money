@@ -3,7 +3,7 @@ const gulp = require('gulp')
 const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
 
-const ignoreColumns = ['Links', 'Photo Source', 'Location']
+const ignoreColumns = ['Links', 'Photo Source', 'Location', 'Description hed']
 
 const convertToJson = async done => {
   const csv = fs.readFileSync('./csv/donors.csv').toString()
