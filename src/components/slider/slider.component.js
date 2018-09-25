@@ -17,14 +17,17 @@ const kebabCase = str =>
     .replace(/("|,)/g, '')
     .replace(/&/g, 'and')
 
-const getImage = donorName => {
+const fetchImage = donorName => {
   try {
     const fileName = kebabCase(donorName)
     return require(`../../images/donors/${fileName}.jpg`)
   } catch (e) {
-    return require(`../../images/donors/no-photo.jpg`)
+    return null
   }
 }
+
+const getImage = donorName =>
+  fetchImage(donorName) || require(`../../images/donors/no-photo.jpg`)
 
 class Slide extends Component {
   state = {
@@ -252,7 +255,14 @@ class DonorSlider extends Component {
 
   updateHash = index => {
     const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
-    const id = index < 1 ? null : kebabCase(visibleDonors[index]['Name'])
+    const donor = visibleDonors[index]
+    const id = index < 1 ? null : kebabCase(donor['Name'])
+    this.props.setMeta({
+      title: `Buffy Wicks donor: ${donor['Name']}`,
+      description: donor['Description hed'],
+      image: fetchImage(donor['Name']),
+      alt: donor['Name']
+    })
     setHash(id)
   }
 
