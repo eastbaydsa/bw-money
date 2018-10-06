@@ -1,5 +1,5 @@
 import React from 'react'
-import './h2.css'
+import './h2.scss'
 
 const H2 = ({ children }) => (
   <div className="h2">

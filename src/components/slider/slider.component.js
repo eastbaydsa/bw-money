@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import Select from 'react-select'
 import classNames from 'classnames'
 import donors from '../../data/donors.json'
-import './slider.css'
+import './slider.scss'
 
 const kebabCase = str =>
   str

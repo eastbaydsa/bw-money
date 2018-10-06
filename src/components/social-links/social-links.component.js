@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from './link.component'
-import './social-links.css'
+import './social-links.scss'
 
 export default function SocialLinks({ links }) {
   return (

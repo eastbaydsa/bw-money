@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import SocialLinks from '../social-links/social-links.component'
 import logo from '../../images/logo.png'
-import './header.css'
+import './header.scss'
 
 class Header extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './arrow.css'
+import './arrow.scss'
 import arrow from '../../images/down-arrow.svg'
 
 class Arrow extends Component {
