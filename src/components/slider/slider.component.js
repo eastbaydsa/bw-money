@@ -216,6 +216,7 @@ class DonorSlider extends Component {
     initialSlide: 0,
     speed: 500,
     arrows: false,
+    lazyLoad: true,
     afterChange: index => {
       this.updateHash(index)
       this.setState({ currentSlide: index })
