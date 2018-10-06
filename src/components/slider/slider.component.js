@@ -280,7 +280,7 @@ class DonorSlider extends Component {
     .sort()
     .map(cat => ({ value: cat, label: cat }))
 
-  handleChange = options => {
+  handleCategoryChange = options => {
     this.setState(
       {
         selectedCategories: options.map(option => option.value)
@@ -296,6 +296,13 @@ class DonorSlider extends Component {
         )
       }
     )
+  }
+
+  handleQueryChange = donor => {
+    if (donor) {
+      const { value: index } = donor
+      this.slider.slickGoTo(index)
+    }
   }
 
   // used for improved performance on mobile
@@ -323,14 +330,28 @@ class DonorSlider extends Component {
     )
     return (
       <Fragment>
-        <div className="donor-categories">
-          <Select
-            options={this.categories}
-            isMulti
-            onChange={this.handleChange}
-            placeholder="Filter donor types..."
-            className="react-select-container"
-          />
+        <div className="filters-wrapper">
+          <div className="filter-wrapper">
+            <Select
+              options={this.categories}
+              isMulti
+              onChange={this.handleCategoryChange}
+              placeholder="Filter donor types..."
+              className="react-select-container"
+            />
+          </div>
+          <div className="filter-wrapper">
+            <Select
+              options={visibleDonors.map((donor, index) => ({
+                value: index,
+                label: donor['Name']
+              }))}
+              isClearable
+              onChange={this.handleQueryChange}
+              placeholder="Search by name..."
+              className="react-select-container"
+            />
+          </div>
         </div>
         <Slider
           ref={this.bindRef}
