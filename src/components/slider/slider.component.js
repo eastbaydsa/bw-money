@@ -183,6 +183,7 @@ class DonorSlider extends Component {
     super(props)
     this.state = {
       selectedCategories: [],
+      query: null,
       currentSlide: getInitialSlideIndex(),
       sliderSettings: Object.assign({}, this.getSliderSettings(), {
         initialSlide: getInitialSlideIndex()
@@ -204,6 +205,10 @@ class DonorSlider extends Component {
     this.slider = ref
   }
 
+  bindQuerySelectRef = ref => {
+    this.querySelect = ref
+  }
+
   baseSliderSettings = {
     className: 'center',
     centerMode: true,
@@ -217,6 +222,11 @@ class DonorSlider extends Component {
     afterChange: index => {
       this.updateHash(index)
       this.setState({ currentSlide: index })
+
+      const { query } = this.state
+      if (query && query.value !== index) {
+        this.querySelect.select.clearValue()
+      }
     }
   }
 
@@ -296,6 +306,7 @@ class DonorSlider extends Component {
   }
 
   handleQueryChange = donor => {
+    this.setState({ query: donor })
     if (donor) {
       const { value: index } = donor
       this.slider.slickGoTo(index)
@@ -328,6 +339,7 @@ class DonorSlider extends Component {
                 label: donor['Name']
               }))}
               isClearable
+              ref={this.bindQuerySelectRef}
               onChange={this.handleQueryChange}
               placeholder="Search by name..."
               className="react-select-container"
