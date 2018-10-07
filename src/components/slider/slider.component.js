@@ -47,7 +47,8 @@ class Slide extends Component {
       directDonation,
       pacDonation,
       description,
-      categories
+      categories,
+      isVisible
     } = this.props
     const categoriesArr = splitCategories(categories).sort()
     return (
@@ -58,63 +59,65 @@ class Slide extends Component {
             style={{ backgroundImage: `url('${imageSrc}')` }}
           />
         )}
-        <div
-          className={classNames('bw-slide__content', {
-            'bw-slide__content--no-image': !imageSrc
-          })}
-        >
-          <Measure
-            bounds
-            onResize={contentRect => {
-              this.setState({ nameDimensions: contentRect.bounds })
-            }}
-          >
-            {({ measureRef }) => (
-              <div ref={measureRef} className="bw-slide__name">
-                <h3>{name}</h3>
-                <div className="bw-slide__donations">
-                  {directDonation && (
-                    <div className="bw-slide__donation">
-                      Direct:{' '}
-                      <span className="bw-slide__donation-value">
-                        {directDonation}
-                      </span>
-                    </div>
-                  )}
-                  {pacDonation && (
-                    <div className="bw-slide__donation">
-                      PAC:{' '}
-                      <span className="bw-slide__donation-value">
-                        {pacDonation}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-          </Measure>
+        {isVisible && (
           <div
-            className="bw-slide__scrollable"
-            style={{
-              height: `calc(100% - ${this.state.nameDimensions.height}px)`
-            }}
+            className={classNames('bw-slide__content', {
+              'bw-slide__content--no-image': !imageSrc
+            })}
           >
-            {/* <h4>{title}</h4> */}
-            <ReactMarkdown
-              renderers={{ link: this.linkRenderer }}
-              source={description}
-            />
-            {categoriesArr.length > 0 && (
-              <div className="bw-slide__categories">
-                {categoriesArr.map(category => (
-                  <div className="bw-slide__category" key={category}>
-                    {category}
+            <Measure
+              bounds
+              onResize={contentRect => {
+                this.setState({ nameDimensions: contentRect.bounds })
+              }}
+            >
+              {({ measureRef }) => (
+                <div ref={measureRef} className="bw-slide__name">
+                  <h3>{name}</h3>
+                  <div className="bw-slide__donations">
+                    {directDonation && (
+                      <div className="bw-slide__donation">
+                        Direct:{' '}
+                        <span className="bw-slide__donation-value">
+                          {directDonation}
+                        </span>
+                      </div>
+                    )}
+                    {pacDonation && (
+                      <div className="bw-slide__donation">
+                        PAC:{' '}
+                        <span className="bw-slide__donation-value">
+                          {pacDonation}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              )}
+            </Measure>
+            <div
+              className="bw-slide__scrollable"
+              style={{
+                height: `calc(100% - ${this.state.nameDimensions.height}px)`
+              }}
+            >
+              {/* <h4>{title}</h4> */}
+              <ReactMarkdown
+                renderers={{ link: this.linkRenderer }}
+                source={description}
+              />
+              {categoriesArr.length > 0 && (
+                <div className="bw-slide__categories">
+                  {categoriesArr.map(category => (
+                    <div className="bw-slide__category" key={category}>
+                      {category}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }
@@ -313,8 +316,24 @@ class DonorSlider extends Component {
     }
   }
 
+  // used for improved performance on mobile
+  isVisible = (cardIndex, currentIndex) => {
+    const padding = 3
+    const visibleDonors = getDonorsInCategories(this.state.selectedCategories)
+    const max = visibleDonors.length - 1
+    const minVisible = currentIndex - padding
+    const maxVisible = currentIndex + padding
+    if (minVisible < 0) {
+      return cardIndex > max + minVisible || cardIndex < maxVisible
+    } else if (maxVisible > max) {
+      return cardIndex > minVisible || cardIndex < maxVisible - max
+    }
+    return cardIndex > minVisible && cardIndex < maxVisible
+  }
+
   render() {
     const { selectedCategories, sliderSettings, currentSlide } = this.state
+    const isMobile = sliderSettings.slidesToShow === 1
     const visibleDonors = getDonorsInCategories(selectedCategories)
     const slidesToShow = Math.min(
       visibleDonors.length,
@@ -363,6 +382,7 @@ class DonorSlider extends Component {
               categories={donor['Category']}
               index={index}
               currentSlide={currentSlide}
+              isVisible={!isMobile || this.isVisible(index, currentSlide)}
             />
           ))}
         </Slider>
