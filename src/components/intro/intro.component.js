@@ -15,7 +15,7 @@ const Intro = () => (
         prefix="$"
         delay={0.5}
         start={0}
-        end={1889627}
+        end={2111605}
         separator=","
         duration={2.5}
         useEasing
