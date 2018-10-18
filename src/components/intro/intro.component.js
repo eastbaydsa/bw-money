@@ -8,7 +8,7 @@ const Intro = () => (
     <H2>
       Buffy Wicks
       <br />
-      Total Donations
+      Total Support
     </H2>
     <p className="donation-value">
       <CountUp
