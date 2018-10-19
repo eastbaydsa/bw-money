@@ -181,12 +181,100 @@ const FAQ = () => (
             – we’ll train you and you’ll have a good time!
           </p>
         </Section>
+        <Section title="What does Buffy mean when she says she takes no contributions “from corporations”?">
+          <p>
+            Buffy’s campaign is awash in corporate cash. That includes money
+            from the bank accounts of:
+          </p>
+          <ul>
+            <li>
+              Corporate billionaires (like LinkedIn co-founder Reid Hoffman)
+            </li>
+            <li>
+              Corporate employees who make concerted donations (like Ron Conway
+              and other employees of{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://svangel.com/"
+              >
+                SV Angel
+              </a>
+              )
+            </li>
+            <li>
+              Corporate trade associations (like the{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://votersedge.org/en/ca/ballot/election/area/69/contests/contest/16670/candidate/138256?id=statewide-69-ca"
+              >
+                California Association of Realtors
+              </a>
+              )
+            </li>
+            <li>
+              IEs funded with corporate cash (like “Govern for California”)
+            </li>
+          </ul>
+          <p>
+            That’s why the audience at the October 2 League of Women Voters{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://m.youtube.com/watch?v=8x4khd0fWy8"
+            >
+              debate
+            </a>{' '}
+            broke out in{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://ebcitizen.com/2018/10/08/berkeley-audience-laughed-when-buffy-wicks-declared-her-campaign-corporate-free/"
+            >
+              laughter
+            </a>{' '}
+            when Buffy said “Jovanka and I are, I think, two of very few
+            candidates in the state of California who have chosen to take{' '}
+            <strong>no corporate money</strong> in this race.”
+          </p>
+          <p>
+            What Buffy actually means is that she hasn’t taken money{' '}
+            <em>directly</em> from the bank accounts of corporations. Her
+            website makes a far narrower claim: “I have not accepted
+            contributions <strong>from corporations</strong> in our campaign.”
+          </p>
+          <p>
+            That’s a dodge—as{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.theatlantic.com/politics/archive/2018/08/why-so-many-democratic-candidates-are-ditching-corporate-pacs/568267/"
+            >
+              The Atlantic
+            </a>{' '}
+            explains, “more of a political maneuver than anything else.” Like
+            many corporate Democrats who have begun rejecting checks from
+            corporations and their PACs, Buffy isn’t “actually rejecting
+            corporations’ <em>resources</em>
+            ”&mdash;as this website illustrates in detail.
+          </p>
+
+          <p>
+            We don't think it matters much whether a donation comes from a
+            corporation’s checking account or its CEO's personal bank account.
+            We're concerned about the billionaires spending big to change the
+            outcome of our elections, and about what policies&mdash;anti-worker,
+            anti-tenant, anti-patient or anti-student&mdash;they hope Buffy will
+            support in their interests.
+          </p>
+        </Section>
         <Section title="Buffy says she doesn’t have any control over who spends money on her behalf. Why does it matter who gives to these PACs?">
           <p>
             PACs are allowed to spend unlimited sums of money influencing
             elections as long as they don’t coordinate too directly with
-            candidates’ campaigns. Buffy knows exactly how PACs work – she was
-            the executive director of Priorities USA, the largest Democratic
+            candidates’ campaigns. Buffy knows exactly how PACs work&mdash;she
+            was the executive director of Priorities USA, the largest Democratic
             super PAC in history, which focused on{' '}
             <a
               target="_blank"
